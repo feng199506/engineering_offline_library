@@ -1,0 +1,40 @@
+dest,status,bytes,sha256,url,detail,utc
+vendor/linear-algebra-hefferon-master.tar.gz,downloaded,42234960,b217a6606f3e817baeb58b244dfc7ff705d7e0aa63a8af98d1cb49f1d9fde304,https://gitlab.com/jim.hefferon/linear-algebra/-/archive/master/linear-algebra-master.tar.gz,ok,2026-10-30T07:49:40Z
+_public/math/hefferon_linear_algebra.pdf,downloaded,7626685,5240f2782e645bc6351ad9eba69d8c19500142a5cca9c90450c17b3765a1a400,https://jheffero.w3.uvm.edu/linearalgebra/book.pdf,ok,2026-10-30T07:49:41Z
+_public/math/hefferon_linear_algebra_answers.pdf,downloaded,1789766,6e1761061c136a984400198f62253cf208ca36ddee81415ae13de81319b5429d,https://jheffero.w3.uvm.edu/linearalgebra/jhanswer.pdf,ok,2026-10-30T07:49:43Z
+_public/math/hefferon_linear_algebra_lab.pdf,downloaded,13121660,0ca33cb79632c3b27c964a6dc8e31f8315d5a529f9e7214ced7f8cb49003b6a2,https://jheffero.w3.uvm.edu/linearalgebra/lab.pdf,ok,2026-10-30T07:49:44Z
+_public/math/hefferon_linear_algebra_slides.zip,downloaded,12163166,82fd214def7cbc1462d9561f26068a1160be49c0e5a03bf216e5992f0c9c7fb1,https://jheffero.w3.uvm.edu/linearalgebra/slides.zip,ok,2026-10-30T07:49:46Z
+_local_only/ai/hastie_esl.pdf,downloaded,21644344,8c15b8b603edf93910ac5784175eee7b1e7b2e94549907a7d699482c59a9949a,https://web.archive.org/web/20180928060423id_/https://web.stanford.edu/~hastie/Papers/ESLII.pdf,ok,2026-10-30T07:49:48Z
+_local_only/ai/islp_python.pdf,downloaded,20053984,278d3bdd49a8a480c2ff8e03245822caad8a3a48e81afd6d039c52c8fc13ad60,https://drive.google.com/uc?export=download&id=1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1,ok,2026-10-30T07:49:53Z
+_local_only/ai/islr2.pdf,downloaded,25136781,7ed447d1a513c5dd95240a829603310f1d319a14a8079ddfb180c6a3d9d9a6ff,https://drive.google.com/uc?export=download&id=1--811-yIIvjT3dvnyFJM20rj_-tbB3bg,ok,2026-10-30T07:49:58Z
+_local_only/control/tedrake_underactuated.pdf,already,5867609,56e7218b17805e734fd3ad687b4da5f64a7095f8aa6a740e0127ab35c2831875,https://github.com/RussTedrake/underactuated/releases/download/2023-03-24/book.pdf,,2026-10-30T07:50:05Z
+_local_only/ai/prince_understanding_deep_learning.pdf,downloaded,22330812,ed7842c0e5baede2a084edef92cd4feac6ad6d68af55a5ebdfed5eb1e790228a,https://github.com/udlbook/udlbook/releases/download/v2.05/UnderstandingDeepLearning_04_18_24_C.pdf,ok,2026-10-30T07:50:05Z
+_local_only/ai/UDL_Answer_Booklet_Students.pdf,already,1800284,ec58fde8a42da57979808b284e52a26e0b67142817d47a657772b09144d1dcf3,https://github.com/udlbook/udlbook/raw/main/UDL_Answer_Booklet_Students.pdf,,2026-10-30T07:50:06Z
+vendor/cvxbook_additional_exercises-main.tar.gz,downloaded,3265023,562ef5ecb374bf01513e51cb24e4c82f2d005e1a2a5b0308cc4336035608afd7,https://github.com/cvxgrp/cvxbook_additional_exercises/archive/refs/heads/main.tar.gz,ok,2026-10-30T07:50:06Z
+_public/math/numpy-user.pdf,downloaded,4821249,a883aa508411670f9d0d77958f455b7443f509833d03b3f235537983a05e0650,https://numpy.org/doc/stable/numpy-user.pdf,ok,2026-10-30T07:50:07Z
+_local_only/embedded/LFS-BOOK.pdf,already,2160786,350d7ec60fb60a66f96958c18c9f64ca4fe72b78b65fa8e51cade872807f62e1,https://www.linuxfromscratch.org/lfs/downloads/13.1-systemd/LFS-SYSD-BOOK-13.1.pdf,,2026-10-30T07:50:07Z
+_local_only/embedded/BLFS-BOOK.pdf,failed,0,,https://www.linuxfromscratch.org/blfs/downloads/13.1-systemd/BLFS-SYSD-BOOK-13.1.pdf,rc=22         Dload  Upload  Total   Spent   Left   Speed    0      0   0      0   0      0      0      0                              0 curl: (22) The requested URL returned error: 404 ,2026-10-30T07:50:07Z
+vendor/scikit-learn-1.5.2.tar.gz,already,6982418,4ba70c0dc45ffb14451b7ba8f5b37ba45f2d5344f2e054c08768d7ce398c79f9,https://github.com/scikit-learn/scikit-learn/archive/refs/tags/1.5.2.tar.gz,,2026-10-30T07:50:09Z
+vendor/pykalman-master.tar.gz,already,1010814,53532dcf7529458dcab7bb4963037d201e2c02a85a9bf7f247d9bc9fe9baed4e,https://github.com/pykalman/pykalman/archive/refs/heads/master.tar.gz,,2026-10-30T07:50:09Z
+_public/engineering/progit2-src.tar.gz,already,15114279,323d16f92ba58e9efd76550b61f0c1fbe0b56cf87a6881e4cebcf486ee4c8ce4,https://github.com/progit/progit2/archive/refs/tags/2.1.441.tar.gz,,2026-10-30T07:50:09Z
+_local_only/papers/arxiv_1312.6114_vae.pdf,already,3926758,bdcb63b79ed88f64f8ee2d43a721930d01dde5441a4dba20ecaa2342b34e017c,https://arxiv.org/pdf/1312.6114.pdf,,2026-10-30T07:50:09Z
+_local_only/papers/arxiv_1502.03167_batchnorm.pdf,already,173548,bdc69e0b568f41d8d3181cc9077a461f58fcdd1c70c9f49efe60a05ee6109655,https://arxiv.org/pdf/1502.03167.pdf,,2026-10-30T07:50:09Z
+_local_only/papers/arxiv_1412.6980_adam.pdf,downloaded,584641,eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31,https://arxiv.org/pdf/1412.6980.pdf,ok,2026-10-30T07:50:09Z
+_local_only/papers/arxiv_1706.03762_attention.pdf,downloaded,2215244,bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697,https://arxiv.org/pdf/1706.03762.pdf,ok,2026-10-30T07:50:10Z
+_local_only/papers/arxiv_1512.03385_resnet.pdf,downloaded,819383,1e0651b6810ecba34a3dbc5b5b0209226f889004607c1f203540a48d64e5a93a,https://arxiv.org/pdf/1512.03385.pdf,ok,2026-10-30T07:50:10Z
+_local_only/papers/arxiv_1203.0734_particle_filter_tutorial.pdf,downloaded,395674,b122129e9720b1ab7b96c26c44b3ddf4f7a4f5d22f94342b266cdc93b4c411f6,https://arxiv.org/pdf/1203.0734.pdf,ok,2026-10-30T07:50:10Z
+_local_only/papers/arxiv_1810.04805_bert.pdf,downloaded,775166,5692a5514787a8c6727b4ff3b726a3385798bc68e12138d1d4af83947e2acf6e,https://arxiv.org/pdf/1810.04805.pdf,ok,2026-10-30T07:50:10Z
+_public/rfcs/rfc7252.txt,downloaded,258789,abfe8cce3370b5b32487421b35725eb6eaf962ea454cad008b5a5cd052e27c5f,https://www.rfc-editor.org/rfc/rfc7252.txt,ok,2026-10-30T07:50:11Z
+_public/rfcs/rfc6455.txt,downloaded,162067,765775326aee0ecca9b04bde3fd1f52932d498e33e34e428bd61b8a24da0fa3b,https://www.rfc-editor.org/rfc/rfc6455.txt,ok,2026-10-30T07:50:11Z
+_public/rfcs/rfc8446.txt,downloaded,337736,47871bc8820a2c3b6ea89f061055577058862cf543686b82d10131239702b3bd,https://www.rfc-editor.org/rfc/rfc8446.txt,ok,2026-10-30T07:50:11Z
+_public/rfcs/rfc8949.txt,downloaded,185226,f1164a5b31a39350ad46abe29b83575eb933ca6c45366989c118b6b1058a214a,https://www.rfc-editor.org/rfc/rfc8949.txt,ok,2026-10-30T07:50:11Z
+_public/specs/amqp-core-complete-v1.0.pdf,downloaded,755621,4416561abae7664efa45a70a81cd59488c71cb4b03321e9e73dffdcba4a7cba4,https://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf,ok,2026-10-30T07:50:11Z
+docs_html/jos_filters,already,119619,,https://ccrma.stanford.edu/~jos/filters/filters.html,,2026-10-30T07:50:12Z
+docs_html/jos_sasp,already,150776,,https://ccrma.stanford.edu/~jos/sasp/sasp.html,,2026-10-30T07:50:12Z
+docs_html/underactuated_html,already,84358,,https://underactuated.mit.edu/index.html,,2026-10-30T07:50:12Z
+docs_html/python_control,already,4199810,,https://python-control.readthedocs.io/en/0.10.2/,,2026-10-30T07:50:12Z
+docs_html/hefferon_la,already,40511,,https://hefferon.net/linearalgebra/,,2026-10-30T07:50:12Z
+docs_html/udlbook,already,321363,,https://udlbook.github.io/udlbook/,,2026-10-30T07:50:12Z
+docs_html/casadi,downloaded,2144636,,https://web.casadi.org/docs/,files=17 rc=0,2026-10-30T07:50:12Z
+docs_html/esp_idf_get_started,already,3863826,,https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html,,2026-10-30T07:50:14Z
+docs_html/yocto_brief,downloaded,3842219,,https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html,files=34 rc=0,2026-10-30T07:50:14Z

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>机器人与无人机 · 学习导读</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>机器人与无人机 · 学习导读</h1>
+<p><strong>状态：已整理。未接飞控、未跑仿真器。</strong></p>
+<h2>先修</h2>
+<p>三维旋转（旋转矩阵/四元数/欧拉角奇异）、领域 03 的 KF、领域 07 的串口/UDP。ROS 2 不是入门第一步。</p>
+<h2>学习顺序</h2>
+<ol><li>坐标与运动学：Lynch/Park <em>Modern Robotics</em> 前几章或 MLS。</li><li>姿态表示与角速度积分。</li><li>导航：AHRS、GNSS 融合（接 P05/P16）。</li><li>MAVLink 心跳、姿态、传感器消息。</li><li>PX4 / ArduPilot <strong>读文档与架构</strong>，本轮不刷机。</li><li>ROS 2 概念：节点、话题、QoS、tf。完整发行版未作离线镜像。</li><li>仿真：文档级；Gazebo/PX4 SITL 镜像 <strong>未下载</strong>（体积大）。</li></ol>
+<h2>核心概念</h2>
+<p>机体 / 导航坐标系搞反，滤波器再好也飞飞。欧拉角万向锁附近不要当状态向量。</p>
+<p>PX4 与 ArduPilot 是不同飞控栈。参数名不能混抄。</p>
+<p>离线平滑的轨迹不能当飞控内环已实现。</p>
+<h2>离线资料</h2>
+<ul><li>个人离线：Modern Robotics PDF、Planning Algorithms、Underactuated。</li><li>开源：ModernRobotics 代码、PX4 user guide 源、ArduPilot wiki 源、MAVLink。</li><li>未下载：Beard/McLain 纸书、PX4 完整固件构建树（极大）、ROS 2 完整 apt 仓库。</li></ul>
+<h2>项目</h2>
+<p>入门：<a href="../projects/P12_mavlink_attitude/README.html"><code>P12_mavlink_attitude</code></a>（解析示意包）。进阶：文档阅读 <a href="../projects/P17_ros2_notes/README.html"><code>P17_ros2_notes</code></a> + 与 P16 联动。</p>
+<h2>常见错误</h2>
+<ul><li>用消费级 IMU 数据当真值评 KF。</li><li>NED 与 ENU 混用。</li><li>在 SITL 里开了地面站回放还以为是实时 onboard。</li></ul>
+</body></html>

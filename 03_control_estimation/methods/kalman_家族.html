@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>Kalman 家族：KF / EKF / UKF / 平滑 / 粒子滤波</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>Kalman 家族：KF / EKF / UKF / 平滑 / 粒子滤波</h1>
+<p><strong>状态：已整理。</strong></p>
+<h2>共同假设框架</h2>
+<p>有状态 \(x_k\)、观测 \(y_k\)。滤波器估计 \(p(x_k|y_{1:k})\)（或矩）。模型错则后验错。\(Q,R\) 是模型的一部分，不是装饰。</p>
+<h2>KF</h2>
+<p>线性 + 高斯 → 均值协方差闭式。复杂度：状态维 \(n\)、观测维 \(m\) 时，朴素更新 \(O(n^3)\) 量级（协方差预测）。数值要用 Joseph 形式或平方根滤波防 \(P\) 失对称。</p>
+<h2>EKF</h2>
+<p>\(x_k=f(x_{k-1},u_{k-1})+w\)，\(y_k=h(x_k)+v\)。雅可比 \(F=\partial f/\partial x\)，\(H=\partial h/\partial x\)。</p>
+<p>局限：强非线性下不一致（自认为很准）；需要可微；四元数约束要额外处理。</p>
+<h2>UKF</h2>
+<p>选 \(2n+1\) 个 sigma 点，经 \(f,h\) 传播后配矩。无雅可比。参数 \(\alpha,\beta,\kappa\) 改变点的散布。过程噪声若与状态耦合（离散化），实现细节会造成“两个 UKF 对不上”。</p>
+<p>不是自动优于 EKF。应以同一条合成轨迹比较 RMSE 与一致性（NEES），并固定随机种子。</p>
+<h2>平滑</h2>
+<p>RTS：前向滤波 + 后向递推，\(p(x_k|y_{1:N})\)。离线标定、事后轨迹可以。实时控制、盘中决策不行。固定滞后平滑 \(p(x_k|y_{1:k+\ell})\) 用 \(\ell\) 步未来，延迟 \(\ell\) 个采样。</p>
+<h2>粒子滤波</h2>
+<p>从建议分布采样，权重 \(\propto\) 似然。有效样本 \(N_{\mathrm{eff}}=1/\sum w_i^2\) 过小则重采样。局限：维度升高指数级粒子；建议分布差则全死。</p>
+<h2>传感器融合要点</h2>
+<ul><li>不同速率：先定义谁驱动时间主钟。</li><li>延迟 GNSS：状态要能预测到观测时刻，或增广延迟。</li><li>野值：门控（新息马氏距离），不要硬吃。</li><li>未建模振动会被 IMU 当成有用加速度。</li></ul>
+<p>P05 用合成 2D 匀速 + 位置 GNSS + 加速度计偏差。P16 用欧拉角简化姿态（教学），并写明 <strong>不是</strong> 飞控级 AHRS。</p>
+</body></html>

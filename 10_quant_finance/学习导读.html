@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>量化与金融时序 · 学习导读</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>量化与金融时序 · 学习导读</h1>
+<p><strong>状态：已整理。数据为合成示意。不构成投资建议。</strong></p>
+<h2>先修</h2>
+<p>统计、时间序列切分、领域 02 的滤波因果性。没做 P01/P03 不要把 EMD 当“alpha”。</p>
+<h2>必须先建立的区别</h2>
+<table><thead><tr><th>做法</th><th>性质</th><th>交易/在线能否直接用</th></tr></thead><tbody><tr><td>全序列 EMD/VMD/小波</td><td>用了 \(t=N\) 的信息分解 \(t=1\)</td><td>否</td></tr><tr><td><code>filtfilt</code> 零相位</td><td>非因果</td><td>否</td></tr><tr><td>RTS / 固定区间平滑</td><td>用未来观测</td><td>否</td></tr><tr><td>滚动窗口、只用 \(y_{1:t}\)</td><td>因果</td><td>才可讨论在线</td></tr><tr><td>用当日收盘构造当日盘中特征</td><td>泄漏</td><td>否</td></tr></tbody></table>
+<p>详见 <a href="methods/未来信息泄漏.html">methods/未来信息泄漏.md</a> 与项目 P06、P14。</p>
+<h2>学习顺序</h2>
+<ol><li>收益定义、复利、波动率（实现 vs 隐含，本库无期权数据）。</li><li>平稳性、自相关、伪回归。</li><li>特征：滞后、滚动因果统计；禁止未来函数。</li><li>回测：交易成本、停牌、生存偏差（本库不提供完整行情，只讲方法）。</li><li>风险：回撤、杠杆、过拟合。</li><li>分解与去噪：只允许滚动/因果版本，并与全序列对照 <strong>作为反例</strong>。</li></ol>
+<h2>离线资料</h2>
+<ul><li>statsmodels、QuantLib-SWIG 源码归档（许可见包内）。</li><li>López de Prado <em>AFML</em>、多数 Wiley/Springer 量化书：<strong>仅书目</strong>。</li><li>mlfinlab：条款变化，<strong>不打包</strong>。</li><li>行情 API：不下载，避免 TOS 问题。</li></ul>
+<h2>项目</h2>
+<p><a href="../projects/P06_finance_causal/README.html"><code>P06_finance_causal</code></a>、<a href="../projects/P14_look_ahead_audit/README.html"><code>P14_look_ahead_audit</code></a>。结论若未运行则不得填写“策略盈利”。</p>
+<h2>常见错误</h2>
+<ul><li>把离线去噪曲线的夏普当实盘。</li><li>交叉验证随机 K 折用在价格上。</li><li>用测试集选因子再报告同一测试集。</li></ul>
+</body></html>

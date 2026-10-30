@@ -1,0 +1,13 @@
+FAIL _public/math/hefferon_linear_algebra.pdf
+FAIL _public/math/hefferon_linear_algebra_answers.pdf
+FAIL _local_only/math/boyd_cvx_additional_exercises.pdf
+FAIL _local_only/control/tedrake_underactuated.pdf
+FAIL _local_only/ai/hastie_esl.pdf
+FAIL _local_only/ai/islp_python.pdf
+FAIL _local_only/ai/prince_understanding_deep_learning.pdf
+FAIL _local_only/ai/barber_brml.zip
+FAIL _public/signal/scipy-ref.pdf
+FAIL _local_only/embedded/Modbus_Application_Protocol_V1_1b3.pdf
+FAIL _local_only/embedded/Modbus_over_serial_line_V1_02.pdf
+FAIL _local_only/embedded/Modbus_Messaging_Implementation_Guide_V1_0b.pdf
+FAIL _local_only/embedded/LFS-BOOK.pdf

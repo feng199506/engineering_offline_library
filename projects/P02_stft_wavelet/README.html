@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>P02 非平稳信号：STFT 与小波时频对比</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>P02 非平稳信号：STFT 与小波时频对比</h1>
+<table><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td>领域</td><td>02 信号处理</td></tr><tr><td>数据</td><td><strong>示意合成</strong>：线性 chirp + 中段脉冲</td></tr><tr><td>采样率</td><td>512 Hz</td></tr><tr><td>状态</td><td>已整理，未运行验证</td></tr><tr><td>环境</td><td><code>03_signal_audio_image_py312</code>（<code>scipy</code> + 可选 <code>pywt</code>）</td></tr></tbody></table>
+<h2>目的</h2>
+<p>同一信号上看 STFT 固定窗与 CWT 多分辨率的差别。不预先宣布谁更好。</p>
+<h2>运行</h2>
+<pre><code>python3 make_signal.py
+python3 analyze.py</code></pre>
+<p>无 <code>pywt</code> 时 CWT 段会写入“跳过”。无 matplotlib 则只写数值摘要。</p>
+<h2>预期现象（逻辑）</h2>
+<ul><li>STFT 短窗：脉冲时间定位较好，chirp 频率条较糊。</li><li>STFT 长窗：相反。</li><li>CWT（若可用）：脉冲在小尺度更尖；低频 chirp 段尺度拉长。</li></ul>
+<h2>评价指标</h2>
+<p>脉冲时间定位误差、chirp 脊线相对理论频率的 RMSE。未运行留空。</p>
+<h2>常见错误</h2>
+<p>用不同色彩映射和不同归一化后肉眼“对比”，却无同一色标或能量定义。</p>
+</body></html>

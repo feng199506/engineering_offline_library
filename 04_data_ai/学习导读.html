@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>数据与 AI · 学习导读</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>数据与 AI · 学习导读</h1>
+<p><strong>状态：已整理。</strong></p>
+<h2>先修</h2>
+<p>线性代数、概率、简单优化。时序任务还要领域 02 的平稳/非平稳概念。不必先学完深度学习再做 scikit-learn。</p>
+<h2>学习顺序</h2>
+<ol><li>数据：缺失、泄漏、切分、标准化拟合只能在训练集。</li><li>经典 ML：线性/逻辑回归、树、SVM、校准与指标。</li><li>统计学习视角：偏差方差、正则。</li><li>深度学习：MLP → CNN → 序列模型；先 d2l 中文版。</li><li>时间序列：ARIMA/状态空间、滚动评估。</li><li>计算机视觉 / NLP / RL <strong>三选一加深</strong>，其余保持导论。</li></ol>
+<h2>核心概念</h2>
+<p>经验风险 \(\hat R(h)=\frac1n\sum \ell(h(x_i),y_i)\) 不是部署风险。时间序列随机切分会把未来掺进训练。</p>
+<p>特征必须在预测时刻可获得。用 \(t+1\) 的收盘价构造 \(t\) 的标签可以；用 \(t+1\) 的均线当 \(t\) 的特征不行。</p>
+<h2>离线资料</h2>
+<ul><li>中文优先：动手学深度学习 PDF 与 <code>vendor/d2l-zh-*.tar.gz</code>；Datawhale 南瓜书、李宏毅笔记（NC，按 local 处理）。</li><li>英文个人离线：ESL、ISL/ISLP、Sutton &amp; Barto、UDL、Barber、Jurafsky 草稿、CS229 笔记。</li><li>开源代码：Spinning Up、scikit-learn 文档 PDF。</li><li>未下载：Bishop PRML 纸书、Goodfellow 纸质/完整 PDF（仅官方 HTML）、大多数 Hugging Face 模型权重（体积与条款另计）。</li></ul>
+<h2>项目</h2>
+<p>入门：<a href="../projects/P09_mnist_mlp/README.html"><code>P09_mnist_mlp</code></a>（若无 MNIST 离线数据则用合成高斯斑）。<br>
+进阶：<a href="../projects/P20_rl_gridworld/README.html"><code>P20_rl_gridworld</code></a>。大模型与 ImageNet <strong>本轮不做</strong>。</p>
+<p>环境：<code>02_*</code>、<code>04_pytorch_cpu_*</code>、<code>07_tensorflow_cpu_*</code>、<code>08_rl_basics_*</code>、<code>09_huggingface_llm_*</code> 均为仅下载。</p>
+<h2>常见错误</h2>
+<ul><li>用测试集调所有超参还报告一次准确率。</li><li>深度学习教程只抄 API，不写假设（IID、标签噪声）。</li><li>把强化学习仿真回报直接当真实机器人回报。</li></ul>
+</body></html>

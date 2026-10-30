@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>P06 金融时间序列：滚动分解 vs 全序列（防泄漏）</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>P06 金融时间序列：滚动分解 vs 全序列（防泄漏）</h1>
+<table><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td>数据</td><td><strong>示意合成价格</strong>（几何布朗 + 正弦调制），不是行情</td></tr><tr><td>状态</td><td>已整理，未运行验证</td></tr><tr><td>关键</td><td>全序列 EMD/低通 <strong>不等于</strong> 可交易特征</td></tr></tbody></table>
+<h2>实验</h2>
+<ol><li>合成价格与因果滞后收益标签 \(r_{t\to t+1}\)。</li><li><code>offline_full</code>：对整段价格 <code>filtfilt</code> 或 EMD，用当前点的平滑值当特征。</li><li><code>causal_roll</code>：每个 \(t\) 只用 \(x_{t-L+1:t}\) 做因果 EMA。</li><li>比较：特征与未来收益的相关、转折点处特征是否提前动。</li></ol>
+<p><strong>不得</strong>把 offline 相关当策略表现。</p>
+<h2>运行</h2>
+<pre><code>python3 make_series.py
+python3 analyze.py</code></pre>
+<h2>评价指标</h2>
+<ul><li>特征与 \(r_{t+1}\) 的相关系数（泄漏诊断，不是 alpha）</li><li>转折点附近特征相对价格的超前样本数（offline 往往“超前”）</li></ul>
+</body></html>

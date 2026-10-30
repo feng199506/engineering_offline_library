@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>综合技术离线资料库 · 总入口</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>综合技术离线资料库 · 总入口</h1>
+<p>按 <strong>入门 → 数学与理论 → 算法 → 实验 → 工程部署</strong> 阅读。<br>
+本库路径：<code>/root/engineering_offline_library/</code>（<code>/root</code> 下独立目录，不含大模型权重与 LLM 运行时）。<br>
+理论资料只保存一份，不按 Python 3.10/3.12 重复打包。实践环境与板端资源在<br>
+<code>/root/linux_python_offline_resources/environments/</code> 与 <code>.../embedded/</code>，按平台、架构、版本分开。</p>
+<h2>本轮执行边界</h2>
+<ul><li>做了：建立目录、撰写中文导读与项目、合法下载开放教材/讲义/源码/规范、登记许可与缺口。</li><li>没做：安装到系统、创建 venv、运行 Notebook、连接硬件、烧录、交叉编译验证、部署。</li><li>状态词只使用：<code>仅下载</code>、<code>已整理</code>、<code>已运行验证</code>、<code>已在目标硬件验证</code>。本轮项目均为 <strong>已整理，未运行验证</strong>。</li></ul>
+<h2>十条领域</h2>
+<table><thead><tr><th>编号</th><th>领域</th><th>导读</th><th>核心先修</th></tr></thead><tbody><tr><td>01</td><td>数学基础</td><td><a href="../01_math/学习导读.html">学习导读</a></td><td>高中代数、一元微积分</td></tr><tr><td>02</td><td>信号处理</td><td><a href="../02_signal/学习导读.html">学习导读</a></td><td>01 中线性代数、傅里叶、概率</td></tr><tr><td>03</td><td>控制与估计</td><td><a href="../03_control_estimation/学习导读.html">学习导读</a></td><td>01 状态空间直觉；02 滤波</td></tr><tr><td>04</td><td>数据与 AI</td><td><a href="../04_data_ai/学习导读.html">学习导读</a></td><td>01 线性代数与概率；可并行 02</td></tr><tr><td>05</td><td>嵌入式与 Linux</td><td><a href="../05_embedded_linux/学习导读.html">学习导读</a></td><td>C 语言、命令行</td></tr><tr><td>06</td><td>开发板</td><td><a href="../06_boards/学习导读.html">学习导读</a></td><td>05；MCU 与 Linux 板分开</td></tr><tr><td>07</td><td>通信与物联网</td><td><a href="../07_comms_iot/学习导读.html">学习导读</a></td><td>05/06 其一</td></tr><tr><td>08</td><td>机器人与无人机</td><td><a href="../08_robotics_uav/学习导读.html">学习导读</a></td><td>01 坐标变换；03 估计；07</td></tr><tr><td>09</td><td>工程开发</td><td><a href="../09_engineering/学习导读.html">学习导读</a></td><td>Git、一门语言</td></tr><tr><td>10</td><td>量化与金融时序</td><td><a href="../10_quant_finance/学习导读.html">学习导读</a></td><td>01 统计；02 分解；<strong>先读防泄漏</strong></td></tr></tbody></table>
+<h2>导航</h2>
+<ol><li><a href="学习路线.html">分阶段学习路线</a></li><li><a href="先修关系.html">先修关系</a></li><li><a href="主题索引.html">主题与资料索引</a></li><li><a href="项目索引.html">实战项目索引</a></li><li><a href="环境对应表.html">环境对应表</a></li><li><a href="来源与许可.html">来源、许可与下载状态</a></li><li><a href="缺失与未验证.html">缺失资料与未验证清单</a></li><li><a href="术语表.html">术语中英对照</a></li><li><a href="离线阅读与增量包.html">离线阅读与增量包</a></li></ol>
+<h2>目录约定</h2>
+<table><thead><tr><th>路径</th><th>内容</th><th>可否进入公开 Release</th></tr></thead><tbody><tr><td><a href="./"><code>00_portal/</code></a>、各领域 <code>学习导读.md</code>、<code>methods/</code>、<a href="../projects/"><code>projects/</code></a></td><td>本库撰写的中文导读与示例</td><td>可以（原创）</td></tr><tr><td><a href="../_public/"><code>_public/</code></a></td><td>许可允许再分发的原文、规范、开源源码包</td><td>可以（保持许可声明）</td></tr><tr><td><a href="../vendor/"><code>vendor/</code></a></td><td>开源仓库归档（Apache/MIT/BSD/GFDL 等）</td><td>可以（核对各包 LICENSE）</td></tr><tr><td><a href="../_local_only/"><code>_local_only/</code></a></td><td>仅供个人离线阅读的作者 PDF、CC BY-NC、OCW</td><td><strong>不可以</strong></td></tr><tr><td><a href="../docs_html/"><code>docs_html/</code></a></td><td>有限深度网页镜像</td><td>默认按站点条款视为 <strong>不可公开上传</strong></td></tr><tr><td><code>/root/linux_python_offline_resources/</code> 的 <code>environments/</code>、<code>runtimes/</code>、<code>embedded/</code></td><td>既有实践环境</td><td>沿用原 Release 策略</td></tr></tbody></table>
+<p><strong>仅有链接不等于已离线下载。</strong> 见 <a href="../inventories/download_log.csv"><code>inventories/download_log.csv</code></a> 的 <code>status</code> 列。</p>
+<h2>推荐阅读顺序（最短路径）</h2>
+<ol><li>本页与 <a href="学习路线.html">学习路线</a> 的阶段 0–1。</li><li><a href="../01_math/%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AF%BB.html"><code>01_math/学习导读.md</code></a> → Hefferon 或 Axler（Axler 在 <a href="../_local_only/"><code>_local_only</code></a>）→ 概率与最小二乘。</li><li><a href="../02_signal/%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AF%BB.html"><code>02_signal/学习导读.md</code></a> 与项目 P01–P03。</li><li><a href="../03_control_estimation/"><code>03_control_estimation</code></a> 与 P05、P16。</li><li>按目标选 04 / 05–07 / 08 / 10，不要并行铺开十条。</li><li>工程习惯贯穿全程：<a href="../09_engineering/"><code>09_engineering</code></a> 的测试、日志、版本锁定。</li></ol>
+<h2>配套环境（已有，仍在 <code>/root/linux_python_offline_resources/</code>，保留）</h2>
+<p>信号处理实验优先：<code>environments/01_scientific_notebook_*</code> 与 <code>03_signal_audio_image_*</code>。<br>
+状态估计与优化：<code>11_optimization_control_*</code>。<br>
+机器学习与时序：<code>02_ml_stats_timeseries_em_*</code>、<code>13_stats_timeseries_*</code>。<br>
+板端与串口：<code>embedded/</code>（主机 x86-64 与 ARM 镜像不可混用）。</p>
+<p>以上环境均为 <strong>仅下载</strong>，本轮未执行 <code>install_offline_en.sh</code>。</p>
+</body></html>

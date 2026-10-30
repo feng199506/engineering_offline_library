@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>离线阅读与增量资产</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>离线阅读与增量资产</h1>
+<h2>阅读</h2>
+<ul><li>导读与项目：Markdown，用任意编辑器。</li><li>PDF：<a href="../_public/"><code>_public/</code></a> 可随公开包；<a href="../_local_only/"><code>_local_only/</code></a> 仅个人阅读，<strong>不要</strong>打进 GitHub Release。</li><li>HTML：<a href="../docs_html/"><code>docs_html/</code></a> 有限镜像，离线用浏览器打开入口页。</li></ul>
+<h2>增量包原则</h2>
+<p>原 wheel/deb/镜像 Release <strong>保留，不重打</strong>。本目录单独打包：</p>
+<table><thead><tr><th>包名建议</th><th>内容</th><th>公开上传</th></tr></thead><tbody><tr><td><code>knowledge-guides-projects_*.tar</code></td><td><a href="./"><code>00_portal/</code></a> 各领域导读 <code>methods/</code> <a href="../projects/"><code>projects/</code></a></td><td>是</td></tr><tr><td><code>knowledge-public-vendor_*.tar</code></td><td><a href="../_public/"><code>_public/</code></a> + 许可允许的 <a href="../vendor/"><code>vendor/</code></a>（已剔除 NC 与大 wiki）</td><td>是（逐项核对 LICENSE）</td></tr><tr><td><code>knowledge-vendor-large-wikis_*.tar</code></td><td>ArduPilot wiki、PX4 user guide、树莓派 documentation 源</td><td>是（体积大，单独包）</td></tr><tr><td><code>knowledge-local-only</code></td><td><a href="../_local_only/"><code>_local_only/</code></a> <a href="../docs_html/"><code>docs_html/</code></a></td><td><strong>否，不打包上传</strong></td></tr><tr><td>大体积视频 / 完整 ROS / 完整内核 HTML</td><td>本轮不做</td><td>—</td></tr><tr><td>系统镜像</td><td>已在实践环境 <code>embedded/linux_sbcs</code> 原包</td><td>沿用原策略</td></tr></tbody></table>
+<p>校验：对每个 tar 写 <code>sha256sum</code>。组合使用：先解压原环境包，再解压 <code>knowledge-guides-projects</code>，再按需解 public vendor / 大 wiki。个人阅读 PDF 留在盘上 <a href="../_local_only/"><code>_local_only/</code></a>，不进 Release。</p>
+<p>脚本：<code>engineering_offline_library/scripts/make_incremental_assets.sh</code>（排除 <a href="../_local_only/"><code>_local_only</code></a> 与 NC vendor）。</p>
+<h2>视频</h2>
+<p>MIT OCW、李宏毅、课程字幕等大体积视频 <strong>本轮不下载</strong>，列入缺口。讲义 PDF 优先。</p>
+</body></html>

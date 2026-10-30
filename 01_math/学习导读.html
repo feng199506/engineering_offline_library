@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>数学基础 · 学习导读</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>数学基础 · 学习导读</h1>
+<p><strong>状态：已整理。正文为原创导读，不是原教材摘要冒充。</strong></p>
+<h2>先修</h2>
+<p>高中函数、向量、一元导数。有编程更好，但本阶段以纸笔推导为主。</p>
+<h2>学习顺序</h2>
+<ol><li><strong>线性代数</strong>：向量空间、线性映射、秩、正交、特征分解、SVD。</li><li><strong>微积分</strong>：梯度、Hessian、泰勒展开、链式法则（为 EKF 与反向传播）。</li><li><strong>概率统计</strong>：条件概率、期望方差、高斯、大数定律、点估计。</li><li><strong>随机过程</strong>：平稳、相关函数、白噪声、功率谱的 Wiener–Khinchin 直觉。</li><li><strong>数值计算</strong>：浮点、条件数、稳定性、迭代法。</li><li><strong>优化</strong>：梯度下降、牛顿、约束与 Lagrange、凸集/凸函数。</li></ol>
+<h2>核心概念与关键公式</h2>
+<p>内积与投影：\(\hat x = \arg\min_x \|Ax-b\|_2\) 在 \(A\) 满列秩时 \(A^\top A \hat x = A^\top b\)。</p>
+<p>SVD：\(A=U\Sigma V^\top\)，最小二乘与 PCA 共用此分解。条件数 \(\kappa=\sigma_{\max}/\sigma_{\min}\)。</p>
+<p>高斯：\(p(x)=\mathcal N(\mu,\Sigma)\)。独立高斯的线性变换仍高斯，这是 Kalman 能闭式更新的原因之一。</p>
+<p>贝叶斯：\(p(\theta|y)\propto p(y|\theta)p(\theta)\)。滤波是随时间递推的贝叶斯更新。</p>
+<p>凸优化：局部最小即全局最小。Boyd 书定义标准。非凸问题（深度网络、VMD 的某些实现）只能谈“可重复的局部解”。</p>
+<h2>适用场景</h2>
+<table><thead><tr><th>工具</th><th>用在后面哪里</th></tr></thead><tbody><tr><td>SVD / 条件数</td><td>滤波协方差、回归、IMU 标定</td></tr><tr><td>高斯与条件期望</td><td>Kalman</td></tr><tr><td>泰勒一阶</td><td>EKF、非线性最小二乘</td></tr><tr><td>功率谱</td><td>信号与振动</td></tr><tr><td>凸优化</td><td>控制约束、CVXPY</td></tr></tbody></table>
+<h2>离线资料（本领域）</h2>
+<ul><li><strong>可公开再分发候选</strong>：Hefferon《Linear Algebra》PDF；Scipy Lecture Notes；GNU Octave / NumPy 手册（见 <a href="../_public/math/"><code>_public/math/</code></a>）。</li><li><strong>仅个人离线</strong>：MML、Axler LADR、Boyd CVX、GPML、MacKay、Strang Calculus OCW、Think Stats/Bayes（<a href="../_local_only/math/"><code>_local_only/math/</code></a>）。</li><li><strong>未下载</strong>：高教社中文教材、Rudin、Trefethen NLA 纸书、多数国内网课视频。</li></ul>
+<p>下载是否成功以 <a href="../inventories/download_log.csv"><code>inventories/download_log.csv</code></a> 为准，失败项见缺口清单。</p>
+<h2>实现与实验</h2>
+<ul><li>Python：NumPy（环境 01）。不要在导读阶段就上 PyTorch。</li><li>Octave：矩阵课练习可与 Python 对拍。</li><li>项目：<a href="../projects/P07_linreg_from_scratch/README.html"><code>projects/P07_linreg_from_scratch</code></a>、<a href="../projects/P19_opt_least_squares/README.html"><code>P19_opt_least_squares</code></a>。</li></ul>
+<h2>常见错误</h2>
+<ul><li>把伪逆当“永远稳定的除法”。</li><li>把独立同分布假设用到强相关噪声上，还用普通最小二乘。</li><li>优化课只调学习率，不看凸性与步长条件。</li></ul>
+</body></html>

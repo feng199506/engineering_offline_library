@@ -1,0 +1,8 @@
+{
+  "fs": 400,
+  "duration_s": 2.0,
+  "sine_hz": 8.0,
+  "noise_std": 0.35,
+  "seed": 3,
+  "verification_status": "已整理，未运行验证"
+}

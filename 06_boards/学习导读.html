@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>开发板 · 学习导读</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>开发板 · 学习导读</h1>
+<p><strong>状态：已整理。全部板卡均为未硬件验证。</strong> 通用算法在 <code>02</code>/<code>03</code>/<code>05</code>；镜像、驱动、板端 wheel 按型号与架构分目录。</p>
+<h2>两条完全不同的线</h2>
+<table><thead><tr><th>线</th><th>例子</th><th>运行时</th><th>资料位置</th></tr></thead><tbody><tr><td>Linux SBC</td><td>树莓派、ODROID、Orange Pi、Radxa、Beagle、Jetson</td><td>发行版 CPython</td><td><code>embedded/linux_sbcs/</code>、<code>embedded/boards/raspberry_pi/</code></td></tr><tr><td>MCU</td><td>Arduino、ESP32、STM32、Pico</td><td>无 MMU；C/RTOS/MicroPython</td><td><code>embedded/boards/</code>、<code>embedded/firmware/</code></td></tr></tbody></table>
+<p>不要把 gpiozero 教程套到 STM32。不要把 Arduino <code>analogRead</code> 教程套到树莓派 OS。</p>
+<h2>Linux 开发板学习顺序</h2>
+<ol><li>读该型号的 <strong>镜像与架构表</strong>（<code>embedded/linux_sbcs/OVERVIEW_cn.md</code>）。</li><li>写卡工具在主机 <code>embedded/linux_sbcs/_shared/host_x86_64/</code>（本轮不写卡）。</li><li>串口 console 参数（常见 115200 8N1，以厂商说明为准）。</li><li>采集：I²C/SPI/USB 小数据 → 环形缓冲 → 时间戳 → 再谈 FFT。</li><li>性能：先测单核浮点 FFT 耗时，再决定 Python 还是 C。</li></ol>
+<p>树莓派 Bookworm 板端 Python 是 <strong>3.11 ARM</strong>，与主机 3.10/3.12 x86-64 <strong>不混用</strong>。</p>
+<p>ODROID 官方 Ubuntu 镜像本轮部分 403/404，现有多为 Armbian 社区镜像，<strong>不是</strong> Hardkernel 官方系统。</p>
+<h2>MCU 学习顺序</h2>
+<ol><li>主机工具链：<code>arduino-cli</code>、ESP 核心、Pico SDK 源码、OpenOCD（已下载范围见 <code>embedded/README_cn.md</code>）。</li><li>点亮与串口打印。</li><li>定时采样 + 简单 FIR。</li><li>CMSIS-DSP 或 kissfft。</li><li>再谈 DMA。</li></ol>
+<p>STM32CubeProgrammer <strong>未下载</strong>（ST 账号）。ESP32-C5/C6 等新芯片核心 <strong>未声明齐全</strong>。</p>
+<h2>项目</h2>
+<p><a href="../projects/P10_serial_logger/README.html"><code>P10_serial_logger</code></a>（主机侧）、<a href="../projects/P18_sbc_capture_buffer/README.html"><code>P18_sbc_capture_buffer</code></a>、<a href="../projects/P15_wavelet_c/README.html"><code>P15_wavelet_c</code></a>。<br>
+部署教程见 <a href="methods/板端采集与部署.html">methods/板端采集与部署.md</a>。文中步骤 <strong>未执行</strong>。</p>
+<h2>常见错误</h2>
+<ul><li>“资料库有镜像”被说成“已经在我的树上跑通”。</li><li>Jetson L4T 与通用 ARM64 Debian 混用 wheel。</li><li>MicroPython UF2 当 Linux 驱动。</li></ul>
+</body></html>

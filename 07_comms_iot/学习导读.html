@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>通信与物联网 · 学习导读</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>通信与物联网 · 学习导读</h1>
+<p><strong>状态：已整理。</strong></p>
+<h2>先修</h2>
+<p>字节序、位运算、会看逻辑电平。总线协议在 MCU 或 Linux 任选一条线上学即可。</p>
+<h2>学习顺序</h2>
+<ol><li>UART：波特率误差、流控、二进制帧。</li><li>I²C：地址、时钟拉伸、总线电容。</li><li>SPI：模式 0–3、片选、全双工。</li><li>USB：主机 vs 从机；CDC ACM 虚拟串口。规范本体 USB-IF <strong>未下载</strong>。</li><li>CAN：仲裁、标识符、物理层电阻；Bosch 核心规范常受限。</li><li>以太网与 TCP/UDP：RFC 791/768/793 已列入下载。</li><li>MQTT：主题、QoS 0/1/2、持久会话。OASIS 规范 PDF。</li><li>Modbus：功能码、线圈/寄存器、TCP vs RTU。</li><li>BLE：GAP/GATT 概念；核心规范需 SIG 账号，<strong>仅书目</strong>。</li></ol>
+<h2>核心概念</h2>
+<p>协议层不要跨着调：Modbus 不是 MQTT；MAVLink 不是“通用遥测 JSON”。</p>
+<p>时间戳应在 <strong>采集端</strong> 打，不要等云端收到再 <code>datetime.now()</code>。</p>
+<h2>离线资料</h2>
+<ul><li>RFC、MQTT OASIS、pyserial 源码：<a href="../_public/"><code>_public</code></a> / <a href="../vendor/"><code>vendor</code></a>。</li><li>Modbus.org PDF：local。</li><li>BLE/USB-IF/CAN 完整规范：未下载。</li></ul>
+<p>主机 Python 通信包已在 <code>embedded/host_linux_x86_64/python_host_comms_*</code>（仅下载）。</p>
+<h2>项目</h2>
+<p>入门：<a href="../projects/P10_serial_logger/README.html"><code>P10_serial_logger</code></a>。进阶：<a href="../projects/P11_mqtt_modbus/README.html"><code>P11_mqtt_modbus</code></a>（本地回环示意，<strong>未接 PLC</strong>）。</p>
+<h2>常见错误</h2>
+<ul><li>115200 在长线无地参考时当可靠。</li><li>MQTT QoS 2 当“绝对不丢且刚好一次”而不看客户端实现。</li><li>Modbus 从站地址与寄存器表用错还怪滤波。</li></ul>
+</body></html>

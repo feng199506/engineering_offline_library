@@ -1,0 +1,10 @@
+{
+  "fs": 12000,
+  "duration_s": 0.5,
+  "carrier_hz": 2000,
+  "fault_hz": 40,
+  "decay": 400,
+  "noise_std": 0.4,
+  "seed": 4,
+  "verification_status": "已整理，未运行验证"
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>未来信息泄漏、全序列分解与因果处理</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>未来信息泄漏、全序列分解与因果处理</h1>
+<p><strong>状态：已整理。适用于金融、在线控制、任何“当时必须做决策”的系统。</strong></p>
+<h2>定义</h2>
+<p>若构造时刻 \(t\) 的特征或滤波输出时使用了 \(t\) 之后才有的观测，则存在 <strong>未来信息泄漏</strong>（look-ahead）。回测会偏乐观。</p>
+<h2>典型泄漏源</h2>
+<ol><li>全序列 EMD / EEMD / CEEMDAN / VMD / 小波包最优基。</li><li><code>filtfilt</code>、零相位 IIR、非因果 Wiener。</li><li>Kalman / RTS <strong>平滑</strong>、固定区间平滑。</li><li>用整段数据标准化（均值方差含未来）。</li><li>标签与特征对齐错误：用 \(r_{t+1}\) 当特征却放在 \(t\) 的同一行不移位。</li><li>滚动窗口写成 <code>x[t-w:t+w]</code>。</li><li>缺失值用双向插值。</li></ol>
+<h2>因果替代</h2>
+<ul><li>滤波：因果 FIR/IIR，承认群延迟。</li><li>分解：每个 \(t\) 只用 \(x_{1:t}\)（或 \(x_{t-L+1:t}\)）重新分解；计算量大，且端点效应 <strong>恰好落在当前点</strong>。</li><li>估计：滤波 \(\hat x_{t|t}\) 或预测 \(\hat x_{t+1|t}\)，不用 \(\hat x_{t|N}\)。</li><li>标准化：只用过去窗口估计均值方差。</li><li>切分：按时间切；禁止打乱。</li></ul>
+<h2>如何自检（P14）</h2>
+<p>对同一算法跑两种模式：</p>
+<ul><li><code>offline_full</code>：全序列。</li><li><code>causal_roll</code>：严格因果。</li></ul>
+<p>若两条曲线在事件附近重合得“好得不像话”，检查是否真的因果。因果版本在转折点应更滞后或更吵。</p>
+<h2>表述纪律</h2>
+<p>可以说：“离线 VMD 在合成数据上的重构 RMSE 为 …（未运行则留空）”。<br>
+不可以说：“因此该因子可实盘”。<br>
+不可以说：“平滑 KF 的 RMSE 就是 IMU 融合 onboard 精度”。</p>
+</body></html>

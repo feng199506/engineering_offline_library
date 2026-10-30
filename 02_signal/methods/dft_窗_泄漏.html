@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>DFT、窗函数、泄漏与频率分辨率</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>DFT、窗函数、泄漏与频率分辨率</h1>
+<p><strong>状态：已整理，公式为教学推导，未运行验证。</strong></p>
+<h2>假设</h2>
+<p>有限长序列 \(x[n],\;n=0,\ldots,N-1\)，采样率 \(f_s\)。DFT 把该序列视为周期为 \(N\) 的周期信号的一个周期。真实世界的截断等于乘窗，频域是卷积。</p>
+<h2>输入 / 输出</h2>
+<ul><li>输入：实或复序列、可选窗 \(w[n]\)、可选零填充到 \(M\ge N\)。</li><li>输出：\(X[k]\)，\(k=0,\ldots,M-1\)。频率轴 \(f_k=k f_s/M\)（未平移）；实信号常用 \(0\sim f_s/2\)。</li></ul>
+<h2>关键公式</h2>
+<p>\[
+X[k]=\sum_{n=0}^{N-1} x[n]w[n]e^{-j2\pi kn/M}
+\]</p>
+<p>矩形窗频谱近似 Dirichlet 核。正弦若不是 \(f_s/N\) 的整数倍，能量漏到邻道：这是 <strong>泄漏</strong>，不是“FFT 算错”。</p>
+<p><strong>频率分辨率</strong>：能分开两条正弦的能力主要由 <strong>有效窗长</strong> 和窗的主瓣宽度决定。零填充只是插值 DFT 曲线，<strong>不</strong>增加独立信息，不能把 10 s 数据变成 0.001 Hz 的真实分辨。</p>
+<p>等效噪声带宽（ENBW）因窗而异：Hann 主瓣宽于矩形，旁瓣低。选窗要看：检测弱邻近谐波，还是要最窄主瓣。</p>
+<h2>参数</h2>
+<table><thead><tr><th>参数</th><th>作用</th><th>乱调后果</th></tr></thead><tbody><tr><td>\(N\)</td><td>时长 \(N/f_s\)</td><td>太短分不开频率</td></tr><tr><td>窗类型</td><td>主瓣/旁瓣折中</td><td>矩形看泄漏；Nuttal 更宽主瓣</td></tr><tr><td>零填充 \(M\)</td><td>绘图插值</td><td>误当分辨率</td></tr><tr><td>分段重叠（Welch）</td><td>方差 vs 分辨</td><td>重叠过大相关段多，方差下降有限</td></tr></tbody></table>
+<h2>复杂度</h2>
+<p>基 2 FFT \(O(M\log M)\)。\(M\) 非 2 的幂仍可用混合基，常数变差。</p>
+<h2>局限</h2>
+<ul><li>非平稳：整段 FFT 会糊成时间平均谱。改 STFT 或小波。</li><li>幅度：窗的相干增益要补偿，否则与理论峰值差一截。</li><li>噪声：单次周期图方差大，需 Welch 或多次平均。</li></ul>
+<h2>实验预期（P01）</h2>
+<p>合成 \(10\,\mathrm{Hz}+10.5\,\mathrm{Hz}\) 在短窗下应 <strong>分不开</strong>；加长 \(N\) 后分开。换 Hann 后旁瓣下降、主瓣变宽。若代码未跑，不要填写“已观察到”。</p>
+</body></html>

@@ -1,0 +1,9 @@
+{
+  "n": 2000,
+  "seed": 6,
+  "mu": 0.0001,
+  "sigma": 0.01,
+  "cycle": 80,
+  "ema_span": 32,
+  "verification_status": "已整理，未运行验证"
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>P01 合成多频信号：FFT、窗、泄漏与频率分辨率</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>P01 合成多频信号：FFT、窗、泄漏与频率分辨率</h1>
+<table><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td>领域</td><td>02 信号处理（入门）</td></tr><tr><td>数据</td><td><strong>示意合成</strong>，非真实录音</td></tr><tr><td>环境</td><td><code>environments/01_scientific_notebook_py312</code> 或 <code>03_signal_audio_image_py312</code></td></tr><tr><td>状态</td><td>已整理，未运行验证</td></tr><tr><td>语言</td><td>Python</td></tr></tbody></table>
+<h2>目的</h2>
+<p>看到：主瓣宽度随窗长变化、泄漏随窗类型变化、零填充不增加真实分辨率。</p>
+<h2>数据说明</h2>
+<ul><li>来源：本目录 <a href="make_signal.py"><code>make_signal.py</code></a> 生成。</li><li>许可：本库原创示意数据。</li><li>字段：<code>t</code>（s）、<code>x</code>（无量纲幅度）。</li><li>采样率：<code>fs = 256</code> Hz。时长默认 2 s 与 8 s 对照。</li><li>成分：10 Hz 与 10.5 Hz 正弦 + 弱 40 Hz + 白噪声。</li></ul>
+<h2>如何运行（未执行）</h2>
+<pre><code>python3 make_signal.py
+python3 analyze.py</code></pre>
+<p>图表写入 <code>output/</code>（运行后才有）。本轮仓库 <strong>不含</strong> 运行产物。</p>
+<h2>预期现象（逻辑预期，非实测）</h2>
+<ul><li>2 s 矩形窗：10 与 10.5 Hz 可能分不开。</li><li>8 s：应能分开。</li><li>Hann：旁瓣低于矩形，主瓣更宽。</li><li>零填充到 8192：曲线更密，分开与否仍取决于有效窗长。</li></ul>
+<h2>评价指标</h2>
+<p>峰值频率误差、两峰之间的凹谷深度、旁瓣最高相对电平。未运行则不要填数字。</p>
+<h2>常见错误</h2>
+<p>把零填充后的插值峰当“新的物理频率”。</p>
+<h2>结果解释</h2>
+<p>未运行。若你本地跑出图，对照 <a href="../../02_signal/methods/dft_%E7%AA%97_%E6%B3%84%E6%BC%8F.html"><code>02_signal/methods/dft_窗_泄漏.md</code></a>。</p>
+</body></html>

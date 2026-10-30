@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>P04 振动诊断：频谱、包络与特征（合成轴承示意）</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>P04 振动诊断：频谱、包络与特征（合成轴承示意）</h1>
+<table><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td>数据</td><td><strong>示意合成</strong> 外圈故障脉冲调制；<strong>不是</strong> CWRU/NASA 真机数据</td></tr><tr><td>真实数据</td><td>CWRU / NASA PCoE 仅列官方入口，本轮默认未下载整库</td></tr><tr><td>状态</td><td>已整理，未运行验证</td></tr></tbody></table>
+<h2>物理示意（简化，非真实轴承动力学）</h2>
+<p>载波（“共振”）约 2 kHz，重复频率 40 Hz 的指数衰减脉冲串 + 高斯噪声。<br>
+包络谱期望在 40 Hz 及其谐波出现峰。这是教学模型，不能当现场诊断结论。</p>
+<h2>运行</h2>
+<pre><code>python3 make_signal.py
+python3 analyze.py</code></pre>
+<h2>评价指标</h2>
+<p>包络谱 40 Hz 峰是否高于邻带；时域峭度。未运行留空。</p>
+<h2>真实数据入口（未下载则不算离线）</h2>
+<ul><li>NASA PCoE bearing：<a href="https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository">https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository</a></li><li>CWRU：<a href="https://engineering.case.edu/bearingdatacenter">https://engineering.case.edu/bearingdatacenter</a> （条款自行遵守）</li></ul>
+</body></html>

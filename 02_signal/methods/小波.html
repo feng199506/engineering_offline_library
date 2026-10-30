@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>小波：多分辨率、DWT/CWT、阈值去噪</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>小波：多分辨率、DWT/CWT、阈值去噪</h1>
+<p><strong>状态：已整理。</strong></p>
+<h2>假设</h2>
+<p>DWT 常用双通道滤波器组满足完全重构（正交或双正交）。CWT 用连续尺度，数值上是离散化的相关。信号长度与边界延拓（周期、对称、零）会改变边缘系数。</p>
+<h2>输入 / 输出</h2>
+<ul><li>DWT：信号、小波名（如 <code>db4</code>、<code>sym5</code>、<code>haar</code>）、层数 \(L\)。输出：近似系数 \(cA_L\) 与各层细节 \(cD_1,\ldots,cD_L\)。</li><li>重构：逆变换。阈值去噪在系数域修改后再逆变换。</li><li>CWT：尺度向量与小波（Morlet、Mexican hat）。输出时频平面，<strong>冗余</strong>，不是正交基投影。</li></ul>
+<h2>关键直觉</h2>
+<p>高频对应短支撑（时间定位好）；低频对应长支撑（频率定位好）。这与 STFT 固定窗不同。</p>
+<p>正交 DWT：\(\|x\|^2=\|c\|^2\)（忽略边界约定差异）。阈值因此能用能量/噪声方差说话。</p>
+<h2>阈值</h2>
+<p>高斯白噪声在正交小波域仍近似白。VisuShrink：\(\lambda=\sigma\sqrt{2\log N}\)。\(\sigma\) 常用第一层细节中位数估计。软阈值有偏、更平滑；硬阈值不连续。噪声有色时该规则失效。</p>
+<p>小波包：对近似 <strong>和</strong> 细节都再分，适合中间频带，但基选择需要准则（熵等），更容易过拟合噪声。</p>
+<h2>复杂度</h2>
+<p>标准 DWT \(O(N)\)。CWT 朴素 \(O(N\cdot\#\text{scales}\cdot\text{support})\)，可用 FFT 卷积加速。</p>
+<h2>局限</h2>
+<ul><li>谐波密集稳态信号，细分 FFT 往往更干净。</li><li>平移敏感性：正交 DWT 对采样相位敏感；需要平移不变时用 SWT/非抽取，或 CWT。</li><li>边界效应看起来像“缺陷脉冲”。</li></ul>
+<p>P02 对比 STFT 与 CWT 时，应固定同一合成 chirp + 脉冲，讨论谁定位脉冲、谁跟踪频率。未运行则不写“CWT 更好”。</p>
+</body></html>

@@ -1,0 +1,11 @@
+domain,downloaded,failed,link_only,bytes_ok
+01_math,9,8,4,72334806
+02_signal,10,40,7,133454395
+03_control_estimation,4,3,3,30188458
+04_data_ai,11,6,4,383492263
+05_embedded_linux,3,3,2,12624161
+06_boards,5,1,3,169638780
+07_comms_iot,8,3,3,5552285
+08_robotics_uav,6,0,2,1064095418
+09_engineering,6,0,2,58916154
+10_quant_finance,1,1,3,14894936

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>EMD 家族与 VMD、Hilbert–Huang</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>EMD 家族与 VMD、Hilbert–Huang</h1>
+<p><strong>状态：已整理。实现以开源库为准，原论文 IEEE 页未下载。</strong></p>
+<h2>共同目标</h2>
+<p>把非平稳信号写成若干“模态”之和加残差。这些模态 <strong>不是</strong> DFT 的正交谐波基底。</p>
+<h2>EMD</h2>
+<p>假设：局部极值足够多；用包络均值抽取本征模态（IMF：极值与过零大致匹配、局部均值为 0）。</p>
+<p>算法概要：对当前残差做筛分（sifting），减去包络均值直至停，得到 IMF，再对残差重复。</p>
+<ul><li>输入：一维实信号、筛分停止准则。</li><li>输出：IMF 列表 + 趋势。</li><li>复杂度：与筛分次数、样条有关，通常远高于一次 FFT。</li><li><strong>局限</strong>：端点处极值缺失，包络外推任意（端点效应）；间歇震荡造成模态混叠；对噪声敏感；结果难复现到“物理部件一一对应”。</li></ul>
+<h2>EEMD</h2>
+<p>对信号多次加高斯噪声再 EMD，平均 IMF。减轻混叠，代价是残余噪声与计算量（试验次数 \(N_e\)）。噪声标准差是关键参数：太大淹信号，太小不起作用。</p>
+<h2>CEEMDAN</h2>
+<p>在每一阶残差上加自适应噪声，改善 EEMD 的重构误差。仍有参数：噪声水平、集成次数。不是“无参数”。</p>
+<h2>VMD（Dragomiretskiy &amp; Zosso, IEEE TSP 2014）</h2>
+<p>把模态当成窄带，围绕中心频率 \(\omega_k\) 的变分问题。需预先或启发式给 \(K\)、带宽惩罚 \(\alpha\)、噪声容限 \(\tau\) 等。</p>
+<ul><li>优点：对谐波较稳、有优化目标。</li><li>局限：\(K\) 选错会分裂或合并；\(\alpha\) 过大过平滑；仍是 <strong>整段批处理</strong>，默认非因果。在线 VMD 变种需另文，不能把离线 VMD 曲线当实时。</li></ul>
+<h2>Hilbert–Huang</h2>
+<p>对 IMF 做 Hilbert 得瞬时幅度与相位，\(\omega(t)=\mathrm{d}\phi/\mathrm{d}t\)。仅当模态接近单分量窄带时，\(\omega(t)\) 可解释。模态混叠时会出现负频率或乱跳。</p>
+<h2>与滤波/小波对比（P03）</h2>
+<p>必须记录：SNR、RMSE、边缘过冲、是否因果、随机种子、库版本。<br>
+EMD 族每次运行可因噪声实现而变。不得只贴“看起来更平滑”的图当结论。</p>
+<h2>金融与控制</h2>
+<p>全序列 EMD/VMD 分解价格或闭环误差 = 使用未来。滚动因果实现要重新定义，性能通常明显变差。P06 用对照实验展示这一点（未运行前不填数字）。</p>
+</body></html>

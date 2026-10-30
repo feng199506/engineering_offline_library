@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>工程开发 · 学习导读</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>工程开发 · 学习导读</h1>
+<p><strong>状态：已整理。</strong> 本领域是让实验可复现的纪律，不是“另学一门 Web”。</p>
+<h2>先修</h2>
+<p>会写函数、会看报错。Windows 与 Linux 环境包 <strong>不混用</strong>（见仓库根 README）。</p>
+<h2>学习顺序</h2>
+<ol><li>版本与构建：Git、锁版本、可重复构建。</li><li>测试：pytest、夹具、时间注入（禁止测试里真的 <code>sleep</code> 依赖外网）。</li><li>数据存储：SQLite/PostgreSQL 角色不同。</li><li>Web/API：HTTP 语义（RFC 9110）、FastAPI 示例。</li><li>日志与监控：结构化日志、指标；没有监控就没有“部署”。</li><li>故障排查：复现、缩小、二分、记录环境哈希。</li></ol>
+<h2>核心概念</h2>
+<p>配置与密钥分离。本库不提供云账号。</p>
+<p>离线 wheelhouse 的安装步骤在 <code>guides/离线安装与使用_cn.md</code>，<strong>本轮未执行</strong>。</p>
+<h2>离线资料</h2>
+<ul><li>Pro Git PDF（NC，local）、SQLite 文档、PostgreSQL PDF、pytest/FastAPI 源码。</li><li>Google SRE 书 CC BY-NC-ND：可个人阅读，不进公开 Release。</li><li>未下载：Docker 完整镜像库、K8s 全集、商业 APM。</li></ul>
+<h2>项目</h2>
+<p><a href="../projects/P13_pytest_api/README.html"><code>P13_pytest_api</code></a>。进阶把 P01 的绘图脚本加上测试（未写 CI）。</p>
+<h2>常见错误</h2>
+<ul><li>实验脚本里写死绝对路径且无种子。</li><li>用生产数据库当单元测试。</li><li>“能跑”但没有 lock 文件。</li></ul>
+</body></html>

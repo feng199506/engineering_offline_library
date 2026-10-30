@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>P05 状态估计：Kalman 与合成 IMU/GNSS 融合</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>P05 状态估计：Kalman 与合成 IMU/GNSS 融合</h1>
+<table><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td>数据</td><td><strong>示意合成</strong> 2D 匀速 + 加速度计偏置 + 稀疏 GNSS 位置</td></tr><tr><td>状态</td><td>已整理，未运行验证，<strong>未接 IMU/GNSS 硬件</strong></td></tr><tr><td>环境</td><td><code>01_scientific_notebook_*</code> 或 <code>11_optimization_control_*</code></td></tr></tbody></table>
+<h2>模型</h2>
+<p>状态 \([p_x,p_y,v_x,v_y,b_{ax},b_{ay}]\)。IMU 100 Hz 加速度（含偏置与噪声）；GNSS 5 Hz 位置。</p>
+<p>对比：</p>
+<ul><li>因果 KF（只用到当前）。</li><li>可选离线 RTS 平滑（用未来，<strong>不可当机载指标</strong>）。</li></ul>
+<h2>运行</h2>
+<pre><code>python3 simulate.py
+python3 filter_run.py</code></pre>
+<h2>评价指标</h2>
+<p>位置 RMSE、速度 RMSE、NEES（一致性）。平滑 RMSE 必须单独成列。</p>
+<h2>常见错误</h2>
+<p>GNSS 与 IMU 用同一数组下标却假装有 20 ms 延迟。本仿真延迟为 0，已在 README 标明，不是真实接收机。</p>
+</body></html>

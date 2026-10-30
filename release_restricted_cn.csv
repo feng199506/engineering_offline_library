@@ -1,0 +1,106 @@
+﻿发布包内相对路径,文件数,字节数,资料库登记的许可或来源说明,原始网址
+_local_only/DO_NOT_PUBLISH.txt,1,149,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/ai/UDL_Answer_Booklet_Students.pdf,1,1800284,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/ai/cs229_main_notes.pdf,1,3253492,Stanford course notes; personal use,https://cs229.stanford.edu/lectures-spring2022/main_notes.pdf
+_local_only/ai/hastie_esl.pdf,1,21644344,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/ai/islp_python.pdf,1,20053984,Authors provide free PDF; Springer; personal use,https://www.statlearning.com/s/ISLP_python.pdf
+_local_only/ai/islr2.pdf,1,25136781,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/ai/islr_seventh_printing.pdf,1,15938490,Authors provide free PDF; personal use,https://www.statlearning.com/s/ISLRSeventhPrinting.pdf
+_local_only/ai/jurafsky_martin_slp3_draft.pdf,1,26506144,Draft posted by authors; all chapters personal use,https://web.stanford.edu/~jurafsky/slp3/ed3book_jan25.pdf
+_local_only/ai/prince_udl_github_src.tar.gz,1,372060510,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/ai/prince_understanding_deep_learning.pdf,1,22330812,MIT Press; free PDF from author site; personal use,https://udlbook.github.io/udlbook/UDL_Book_2024_04_19.pdf
+_local_only/ai/sutton_barto_rlbook2020.pdf,1,73129769,Authors provide free PDF; MIT Press copyright,http://incompleteideas.net/book/RLbook2020.pdf
+_local_only/control/astrom_murray_feedback_systems.pdf,1,34553732,Author-posted; Princeton Univ Press; personal use,https://www.cds.caltech.edu/~murray/books/AM08/pdf/fbs-public_24Jul2020.pdf
+_local_only/control/murray_li_sastry_robotic_manipulation.pdf,1,2795175,Authors posted PDF; CRC copyright,https://www.cds.caltech.edu/~murray/books/MLS/pdf/mls94-complete.pdf
+_local_only/control/python_control_user_guide.html,1,16996,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/control/tedrake_underactuated.pdf,1,5867609,CC BY-NC-SA or course terms (see underactuated.mit.edu),https://underactuated.csail.mit.edu/underactuated.pdf
+_local_only/embedded/LFS-BOOK.pdf,1,2160786,CC BY-NC-SA (LFS),https://www.linuxfromscratch.org/lfs/downloads/stable/LFS-BOOK.pdf
+_local_only/embedded/blfs-book-13.1-systemd-html.tar.xz,1,971352,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/embedded/modbus_application_protocol.pdf,1,932519,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/embedded/modbus_tcp_security.pdf,1,396975,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/embedded/raspberry-pi-pico-c-sdk.pdf,1,6297830,Raspberry Pi documentation terms,https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf
+_local_only/embedded/raspberry-pi-pico-python-sdk.pdf,1,2281173,Raspberry Pi documentation terms,https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf
+_local_only/embedded/rp2040-datasheet.pdf,1,5301205,Raspberry Pi Ltd; documentation terms (local),https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf
+_local_only/engineering/progit.pdf,1,18834430,CC BY-NC-SA 3.0,https://github.com/progit/progit2/releases/download/2.1.441/progit.pdf
+_local_only/math/axler_ladr4e.pdf,1,2795184,Author-posted PDF at linear.axler.net; Springer copyright,https://linear.axler.net/LADR4e.pdf
+_local_only/math/boyd_vandenberghe_convex_optimization.pdf,1,6881335,Author-posted PDF; CUP copyright; personal use,https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf
+_local_only/math/downey_thinkbayes.pdf,1,2546224,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/math/downey_thinkstats2.pdf,1,2088824,CC BY-NC 4.0,https://greenteapress.com/thinkstats2/thinkstats2.pdf
+_local_only/math/mackay_itila.pdf,1,11675219,Author-posted; CUP copyright; free electronic copy,https://www.inference.org.uk/itprnn/book.pdf
+_local_only/math/mml-book.pdf,1,17565898,CUP personal-use PDF; not for redistribution,https://mml-book.github.io/book/mml-book.pdf
+_local_only/math/rasmussen_williams_gpml.pdf,1,4052292,MIT Press; authors provide free PDF for personal use,https://gaussianprocess.org/gpml/chapters/RW.pdf
+_local_only/papers/arxiv_0912.2437.pdf,1,1234498,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/papers/arxiv_1203.0734_particle_filter_tutorial.pdf,1,395674,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/papers/arxiv_1312.6114_vae.pdf,1,3926758,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/papers/arxiv_1412.6980_adam.pdf,1,584641,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/papers/arxiv_1502.00841.pdf,1,456709,arXiv; local,https://arxiv.org/pdf/1502.00841.pdf
+_local_only/papers/arxiv_1502.03167_batchnorm.pdf,1,173548,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/papers/arxiv_1504.00467_related.pdf,1,1129115,arXiv non-exclusive; local archive,https://arxiv.org/pdf/1504.00467.pdf
+_local_only/papers/arxiv_1506.03099.pdf,1,283137,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/papers/arxiv_1512.03385_resnet.pdf,1,819383,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/papers/arxiv_1703.01898_wavelet_overview.pdf,1,1465199,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/papers/arxiv_1706.03762_attention.pdf,1,2215244,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/papers/arxiv_1810.04805_bert.pdf,1,775166,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/papers/nasa_huang_hht.pdf,1,1572011,资料库放在 _local_only/（仅个人阅读，DO_NOT_PUBLISH.txt），未单独登记许可,
+_local_only/robotics/lavalle_planning_algorithms.pdf,1,13370045,Author-posted; CUP; personal use,http://lavalle.pl/planning/book.pdf
+_local_only/robotics/lynch_park_modern_robotics.pdf,1,7211126,Authors provide free PDF; CUP copyright; personal use,http://hades.mech.northwestern.edu/images/7/7f/MR.pdf
+_local_only/signal/downey_thinkdsp.pdf,1,4278028,CC BY-NC 4.0,https://greenteapress.com/thinkdsp/thinkdsp.pdf
+_local_only/signal/dspguide/CH1.PDF,1,45397,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH1.PDF
+_local_only/signal/dspguide/CH10.PDF,1,689134,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH10.PDF
+_local_only/signal/dspguide/CH11.PDF,1,589518,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH11.PDF
+_local_only/signal/dspguide/CH12.PDF,1,188724,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH12.PDF
+_local_only/signal/dspguide/CH13.PDF,1,370305,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH13.PDF
+_local_only/signal/dspguide/CH14.PDF,1,254727,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH14.PDF
+_local_only/signal/dspguide/CH15.PDF,1,165860,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH15.PDF
+_local_only/signal/dspguide/CH16.PDF,1,353357,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH16.PDF
+_local_only/signal/dspguide/CH17.PDF,1,372766,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH17.PDF
+_local_only/signal/dspguide/CH18.PDF,1,154984,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH18.PDF
+_local_only/signal/dspguide/CH19.PDF,1,362895,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH19.PDF
+_local_only/signal/dspguide/CH2.PDF,1,480882,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH2.PDF
+_local_only/signal/dspguide/CH20.PDF,1,244431,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH20.PDF
+_local_only/signal/dspguide/CH21.PDF,1,166552,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH21.PDF
+_local_only/signal/dspguide/CH22.PDF,1,362336,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH22.PDF
+_local_only/signal/dspguide/CH23.PDF,1,694437,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH23.PDF
+_local_only/signal/dspguide/CH24.PDF,1,2113231,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH24.PDF
+_local_only/signal/dspguide/CH25.PDF,1,688869,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH25.PDF
+_local_only/signal/dspguide/CH26.PDF,1,485729,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH26.PDF
+_local_only/signal/dspguide/CH27.PDF,1,394218,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH27.PDF
+_local_only/signal/dspguide/CH28.PDF,1,430027,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH28.PDF
+_local_only/signal/dspguide/CH29.PDF,1,1141445,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH29.PDF
+_local_only/signal/dspguide/CH3.PDF,1,568623,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH3.PDF
+_local_only/signal/dspguide/CH30.PDF,1,349268,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH30.PDF
+_local_only/signal/dspguide/CH31.PDF,1,397824,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH31.PDF
+_local_only/signal/dspguide/CH32.PDF,1,1619436,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH32.PDF
+_local_only/signal/dspguide/CH33.PDF,1,302493,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH33.PDF
+_local_only/signal/dspguide/CH34.PDF,1,715468,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH34.PDF
+_local_only/signal/dspguide/CH4.PDF,1,142020,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH4.PDF
+_local_only/signal/dspguide/CH5.PDF,1,206360,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH5.PDF
+_local_only/signal/dspguide/CH6.PDF,1,251843,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH6.PDF
+_local_only/signal/dspguide/CH7.PDF,1,285389,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH7.PDF
+_local_only/signal/dspguide/CH8.PDF,1,486957,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH8.PDF
+_local_only/signal/dspguide/CH9.PDF,1,433637,Author-hosted at dspguide.com; personal reading; not for public Release,http://www.dspguide.com/CH9.PDF
+_local_only/signal/vetterli_foundations_signal_processing.pdf,1,13146821,Author-posted; CUP; personal use,https://www.fourierandwavelets.org/FSP_v1.1_2014.pdf
+_local_only/signal/vetterli_fourier_wavelet_signal_processing.pdf,1,5171582,Author-posted draft; personal use,https://www.fourierandwavelets.org/FWSP_a3.2_2013.pdf
+docs_html/casadi/,20,2264609,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/cs231n/,13,270068,see original site,https://cs231n.github.io/
+docs_html/dspguide/,27,340859,see original site,http://www.dspguide.com/pdfbook.htm
+docs_html/esp_idf_get_started/,41,3982380,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/hefferon_la/,11,115161,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/jos_filters/,7,119851,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/jos_mdft/,7,105848,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/jos_sasp/,7,151008,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/lfs/,3,55429,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/modbus_specs/,50,15213701,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/nielsen_nndl/,26,272442,see original site,http://neuralnetworksanddeeplearning.com/
+docs_html/probabilitycourse/,18,677573,see original site,https://www.probabilitycourse.com/
+docs_html/python_control/,34,4217184,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/statlearning/,103,7407281,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/twelve_factor/,8,64671,see original site,https://12factor.net/
+docs_html/udlbook/,11,432331,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/underactuated_html/,8,84358,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+docs_html/yocto_brief/,34,3842157,网页镜像（入口页加一层），资料库默认按仅个人阅读处理,
+vendor/ThinkDSP-master.tar.gz,1,104743427,Downey Think DSP 源码，资料库按 NC / 个人使用处理,https://github.com/AllenDowney/ThinkDSP/archive/refs/heads/master.tar.gz
+vendor/cvxbook_additional_exercises-main.tar.gz,1,3265023,Boyd 附加习题源码，资料库按个人使用处理,
+vendor/leedl-tutorial-master.tar.gz,1,55477216,Datawhale leedl-tutorial 源码，CC BY-NC-SA,https://github.com/datawhalechina/leedl-tutorial/archive/refs/heads/master.tar.gz
+vendor/pumpkin-book-master.tar.gz,1,6153928,Datawhale 南瓜书源码，CC BY-NC-SA,https://github.com/datawhalechina/pumpkin-book/archive/refs/heads/master.tar.gz
+vendor/underactuated-tedrake-master.tar.gz,1,10704025,Tedrake Underactuated 源码，资料库按 NC / 课程条款处理,

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>环境对应表</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>环境对应表</h1>
+<p>理论资料在 <code>/root/engineering_offline_library/</code>，<strong>不按 3.10/3.12 复制</strong>。实践环境在 <code>/root/linux_python_offline_resources/</code>，状态均为 <strong>仅下载</strong>。</p>
+<p>下表环境目录均相对于 <code>/root/linux_python_offline_resources/</code>。</p>
+<table><thead><tr><th>学习内容</th><th>Linux x86-64 环境目录</th><th>板端/MCU</th></tr></thead><tbody><tr><td>NumPy/SciPy/绘图、P01/P07/P19</td><td><code>environments/01_scientific_notebook_py310</code> 与 <code>_py312</code></td><td>不可用 x86 wheel</td></tr><tr><td>统计时序、P06</td><td><code>02_ml_stats_timeseries_em_*</code>、<code>13_stats_timeseries_*</code></td><td>—</td></tr><tr><td>信号/图像、P02–P04</td><td><code>03_signal_audio_image_*</code></td><td>板端需 ARM wheel</td></tr><tr><td>深度学习、P09 进阶</td><td><code>04_pytorch_cpu_*</code>、<code>07_tensorflow_cpu_*</code></td><td>Jetson 用 L4T，勿混</td></tr><tr><td>优化与控制、P08/P05</td><td><code>11_optimization_control_*</code></td><td>—</td></tr><tr><td>RL、P20 进阶</td><td><code>08_rl_basics_*</code></td><td>—</td></tr><tr><td>NLP</td><td><code>09_huggingface_llm_*</code>、<code>15_nlp_retrieval_*</code></td><td>权重大，本知识库未下模型</td></tr><tr><td>工程 API、P13</td><td><code>17_web_services_*</code>、<code>18_database_*</code></td><td>—</td></tr><tr><td>主机串口/MQTT/MAVLink</td><td><code>embedded/host_linux_x86_64/python_host_comms_py310/312</code></td><td>板端另放</td></tr><tr><td>树莓派 GPIO</td><td>—</td><td><code>embedded/boards/raspberry_pi/bookworm_arm64</code> 与 <code>armhf</code></td></tr><tr><td>Arduino/ESP/Pico/STM32 工具</td><td>主机 <code>embedded/host_linux_x86_64/</code></td><td>固件 <code>embedded/firmware/</code></td></tr><tr><td>Linux 镜像</td><td>不装进 Python 环境</td><td><code>embedded/linux_sbcs/_shared/images/</code> 按型号</td></tr></tbody></table>
+<p>Windows 对应包在 <code>windows_python_offline_resources/</code>，与 Linux 安装包不混用。</p>
+<p>GNU Octave：手册列入下载；本机是否安装 Octave <strong>未检查</strong>。信号处理可 <code>pkg load signal</code>（需你自行离线装包）。</p>
+<p>C/C++：kissfft、CMSIS-DSP、Pico SDK 源码、haar.c。未编译。</p>
+</body></html>

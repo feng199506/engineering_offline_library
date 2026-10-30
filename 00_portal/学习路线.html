@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>分阶段学习路线</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>分阶段学习路线</h1>
+<p>目标不是“读完所有 PDF”，而是每阶段能 <strong>推导一个核心公式、实现一个最小算法、解释一次实验现象</strong>。<br>
+阶段内资料见各领域导读。本路线是总顺序。</p>
+<h2>阶段 0 · 工具与纪律（1–3 天）</h2>
+<ul><li>会用编辑器、终端、Git 记录实验参数。</li><li>读 <code>/root/linux_python_offline_resources/guides/离线安装与使用_cn.md</code>（若要跑代码；本轮未安装）。</li><li>分清四种状态：仅下载 / 已整理 / 已运行验证 / 已在目标硬件验证。</li><li>金融与控制：先读 <a href="../10_quant_finance/methods/%E6%9C%AA%E6%9D%A5%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F.html"><code>10_quant_finance/methods/未来信息泄漏.md</code></a> 中的因果原则，后面所有分解都套用。</li></ul>
+<p>产出：能打开一份 Markdown、一份 PDF、一份 Python 文件，并说明它们的许可类别。</p>
+<h2>阶段 1 · 数学语言（2–4 周）</h2>
+<p>顺序：线性代数 → 微积分/ODE 直觉 → 概率统计 → 数值计算 → 无约束优化。</p>
+<p>必做：</p>
+<ol><li>矩阵乘法、秩、特征分解/SVD 各写一页推导。</li><li>高斯分布、贝叶斯公式、随机过程的平稳与白噪声。</li><li>最小二乘的法方程与条件数。</li></ol>
+<p>项目：<a href="../projects/P07_linreg_from_scratch/README.html"><code>P07_linreg_from_scratch</code></a>、<a href="../projects/P19_opt_least_squares/README.html"><code>P19_opt_least_squares</code></a>。<br>
+环境：<code>01_scientific_notebook_py312</code>（未验证）。</p>
+<h2>阶段 2 · 信号的时域与频域（3–5 周）</h2>
+<p>顺序：采样与混叠 → 卷积/相关 → DFT/FFT → 窗与泄漏 → FIR/IIR → STFT → 小波 → EMD 家族。</p>
+<p>必做：</p>
+<ol><li>用合成多频信号看到主瓣宽度与旁瓣（P01）。</li><li>同一非平稳信号上对比 STFT 与 CWT（P02）。</li><li>去噪时同时记录 SNR <strong>和</strong> 相位/边缘失真（P03）。</li></ol>
+<p>不要在没做 P01 之前跳到 VMD。<br>
+环境：<code>03_signal_audio_image_*</code>、GNU Octave <code>signal</code> 包（若本机有；本轮未装）。</p>
+<h2>阶段 3 · 状态、滤波与控制（3–5 周）</h2>
+<p>顺序：状态空间 → 可观测性直觉 → Kalman → EKF/UKF → 平滑 vs 滤波 → 粒子滤波 → 经典 PID/超前滞后 → 系统辨识入门。</p>
+<p>必做：</p>
+<ol><li>线性高斯 KF 手推预测/更新，再对照实现（P05 的 GNSS 位置通道）。</li><li>同一非线性姿态问题比较 EKF 与 UKF（P16），记录是否 <strong>未调参</strong>。</li><li>明确：RTS 平滑用了未来观测，<strong>不能</strong>当作机载实时性能。</li></ol>
+<p>环境：<code>11_optimization_control_*</code>、<code>01_scientific_notebook_*</code>。</p>
+<h2>阶段 4 · 数据、模型与时间序列（4–8 周，可与 3 部分重叠）</h2>
+<p>顺序：数据整理 → 线性模型/树模型 → 深度学习基础 → 时间序列 → 择一：CV / NLP / RL。</p>
+<p>必做：滚动窗口、时间切分、禁止打乱时序。<br>
+项目：<a href="../projects/P09_mnist_mlp/README.html"><code>P09_mnist_mlp</code></a>（入门）、<a href="../projects/P20_rl_gridworld/README.html"><code>P20_rl_gridworld</code></a>（入门）、领域进阶用 d2l 章节而非自造大项目。<br>
+环境：<code>02_*</code>、<code>04_pytorch_cpu_*</code>、<code>08_rl_basics_*</code>、<code>09_huggingface_llm_*</code>（按需，均未验证）。</p>
+<h2>阶段 5 · 嵌入式与板端（贯穿，从阶段 2 末开始）</h2>
+<p>Linux SBC 与 MCU <strong>两条线</strong>：</p>
+<ul><li>SBC：交叉编译概念、设备树、时间戳与时钟源、环形缓冲、实时性是调度问题不是“把 Python 循环写快一点”。</li><li>MCU：UART 日志、DMA/中断、定点 FIR、CMSIS-DSP 或 kissfft。</li></ul>
+<p>项目：<a href="../projects/P10_serial_logger/README.html"><code>P10_serial_logger</code></a>、<a href="../projects/P15_wavelet_c/README.html"><code>P15_wavelet_c</code></a>、<a href="../projects/P18_sbc_capture_buffer/README.html"><code>P18_sbc_capture_buffer</code></a>。<br>
+状态：代码 <strong>已整理，未在目标硬件验证</strong>。镜像在 <code>embedded/linux_sbcs/</code>，<strong>未烧录</strong>。</p>
+<h2>阶段 6 · 通信、机器人、工程化（按职业目标选）</h2>
+<ul><li>通信：UART/I²C/SPI 之后才是 MQTT/Modbus/CAN（P11）。</li><li>无人机：先坐标与姿态，再 MAVLink，再 PX4 文档，不要一上来刷飞控（P12）。</li><li>工程：测试、API、日志、监控（P13）。没有这一层，前面的实验无法复现。</li></ul>
+<h2>阶段 7 · 量化（仅在 1、2、4 之后）</h2>
+<p>必读：全序列 EMD/VMD、零相位 <code>filtfilt</code>、Kalman 平滑在交易里都是 <strong>离线</strong> 能力。<br>
+项目：<a href="../projects/P06_finance_causal/README.html"><code>P06_finance_causal</code></a>、<a href="../projects/P14_look_ahead_audit/README.html"><code>P14_look_ahead_audit</code></a>。<br>
+禁止把 Yahoo/付费行情当本库已下载数据。本库金融数据为 <strong>示意合成</strong>。</p>
+<h2>每周检查问题</h2>
+<ol><li>这个算法的假设是什么？打破后会怎样？</li><li>输入输出维度、参数、复杂度各是什么？</li><li>评价指标是否同时覆盖误差与延迟/因果性？</li><li>结果来自合成数据还是真实数据？是否已运行？</li></ol>
+</body></html>

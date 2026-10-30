@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>缺失资料与未验证项目</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>缺失资料与未验证项目</h1>
+<p>按 <strong>2026-10-30 盘上实况</strong> 更新（含 <code>continue_fetch.py</code> 第二轮）。仅有链接的项目 <strong>不算已离线</strong>。</p>
+<h2>验证状态（本轮）</h2>
+<table><thead><tr><th>类别</th><th>状态</th></tr></thead><tbody><tr><td>中文导读、方法文、项目源码</td><td>已整理</td></tr><tr><td>开放 PDF/源码归档</td><td>部分已下载（见 <a href="../inventories/continue_fetch_log.csv"><code>inventories/continue_fetch_log.csv</code></a>、<code>on_disk_files.csv</code>）</td></tr><tr><td>项目运行、绘图、指标数字</td><td><strong>未运行验证</strong></td></tr><tr><td>venv / pip 离线安装</td><td><strong>未做</strong></td></tr><tr><td>交叉编译、gcc 编译 haar.c</td><td><strong>未做</strong></td></tr><tr><td>串口/IMU/飞控/PLC/MQTT broker</td><td><strong>未连接硬件</strong></td></tr><tr><td>镜像写卡、烧录、部署</td><td><strong>未做</strong></td></tr><tr><td>全部板卡</td><td><strong>未在目标硬件验证</strong></td></tr></tbody></table>
+<h2>本轮已补到盘上（原先缺口）</h2>
+<ul><li>DSP Guide：34 章 PDF 在 <a href="../_local_only/signal/dspguide/"><code>_local_only/signal/dspguide/</code></a></li><li>Hefferon <em>Linear Algebra</em>：PDF、答案、实验手册、幻灯、GitLab 源（GFDL/CC，<a href="../_public/math/"><code>_public/math/</code></a> + <a href="../vendor/"><code>vendor/</code></a>）</li><li>Åström/Murray Feedback Systems、Murray/Li/Sastry MLS：已在 <a href="../_local_only/control/"><code>_local_only/control/</code></a></li><li>Tedrake Underactuated：PDF + HTML 镜像 + GitHub 源（NC，勿进公开包）</li><li>ESL（作者 PDF 的 IA 快照，个人阅读）、ISLP Python、ISLR2、UDL Prince PDF + 学生答案册 + GitHub 源（NC-ND）</li><li>Jurafsky/Martin SLP3 草稿、Think Bayes、Octave manual</li><li>Huang EMD/HHT：NTRS 副本已在 <a href="../_local_only/papers/"><code>_local_only/papers/</code></a></li><li>LFS 13.x PDF；BLFS 无官方 PDF，已下 <code>blfs-book-13.1-systemd-html.tar.xz</code></li><li>Modbus Application Protocol 与 TCP Security PDF（<a href="../_local_only/embedded/"><code>_local_only/embedded/</code></a>）</li><li>NumPy user guide、CasADi HTML、Yocto brief HTML、sklearn 1.5.2 源、pykalman 源</li><li>Boyd 附加习题 GitHub 源（个人使用，勿进公开包）</li><li>arXiv：VAE、BatchNorm、Adam、Attention、ResNet、BERT、粒子滤波综述</li><li>RFC 7252/6455/8446/8949；OASIS AMQP 1.0 完整 PDF</li></ul>
+<h2>仍未下载或失败（高优先级）</h2>
+<ul><li>JOS 三本仍无单文件 PDF（仅有限 HTML 入口镜像）</li><li>Barber <em>Bayesian Reasoning and Machine Learning</em>（UCL 超时）</li><li>Strang Calculus OCW PDF、Boyd EE263 coursereader PDF（404）</li><li>sklearn 用户指南 PDF、SciPy reference PDF、Yocto mega-manual PDF（官方路径 404）</li><li>VMD/CEEMDAN 原 IEEE 论文；Kalman 1960 原刊、Gordon 1993、Mallat 1989、Shannon 1949、Cooley–Tukey（版权期刊，不绕过）</li><li>Oppenheim、Mallat 书、Lyons、Proakis、Simon <em>Optimal State Estimation</em>、Bishop PRML、Goodfellow 纸质 PDF</li><li>López de Prado AFML 及绝大多数 Wiley 量化书</li><li>STM32CubeProgrammer、NXP/NVIDIA 需账号 BSP 与 CUDA</li><li>BLE Core、USB-IF、Bosch CAN 完整规范</li><li>ROS 2 完整文档/发行版、Gazebo/PX4 SITL 镜像</li><li>ESP-IDF 大 PDF</li><li>MIT OCW 完整讲义包与字幕、课程视频（视频按策略未下）</li><li>李宏毅官方幻灯（仅链接）</li><li>CWRU / NASA 轴承全库、任何真实行情</li><li>Hugging Face 模型权重</li></ul>
+<h2>未覆盖完整的学习路线专题</h2>
+<ul><li>自适应滤波（LMS/RLS）仅有 padasip 源码，缺系统讲义</li><li>多速率滤波器组的完整设计实验</li><li>粒子滤波独立项目（方法文 + arXiv 综述；无单独项目）</li><li>系统辨识完整项目</li><li>ROS 2 可运行工作空间</li><li>硬实时测量数据集</li></ul>
+<h2>体积注意</h2>
+<table><thead><tr><th>路径</th><th>约</th></tr></thead><tbody><tr><td><a href="../vendor/ardupilot_wiki-master.tar.gz"><code>vendor/ardupilot_wiki-master.tar.gz</code></a></td><td>0.75 GiB</td></tr><tr><td><a href="../vendor/PX4-user_guide-main.tar.gz"><code>vendor/PX4-user_guide-main.tar.gz</code></a></td><td>0.25 GiB</td></tr><tr><td><a href="../vendor/raspberrypi-documentation-master.tar.gz"><code>vendor/raspberrypi-documentation-master.tar.gz</code></a></td><td>0.13 GiB</td></tr><tr><td><a href="../_local_only/ai/prince_udl_github_src.tar.gz"><code>_local_only/ai/prince_udl_github_src.tar.gz</code></a></td><td>0.35 GiB（勿发布）</td></tr></tbody></table>
+<p>增量包：大 wiki 单独 <code>knowledge-vendor-large-wikis_*.tar</code>；南瓜书 / leedl / ThinkDSP / Underactuated 源 / Boyd 附加习题 <strong>不进</strong>公开 vendor tar。</p>
+</body></html>

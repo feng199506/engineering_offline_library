@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>先修关系</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>先修关系</h1>
+<pre><code>高中代数 / 一元微积分
+        │
+        ▼
+   01 数学基础 ──┬──► 02 信号处理 ──► 振动诊断、音频
+        │        │
+        │        └──► 03 控制与估计 ──► 08 姿态/导航
+        │                 │
+        ├──► 04 数据与 AI ─┴──► 10 量化（必须叠加因果约束）
+        │
+C 语言 / 命令行
+        │
+        ▼
+   05 嵌入式 Linux ──► 06 Linux 开发板（树莓派/ODROID/…）
+        │                      │
+        ├──► 06 MCU（Arduino/ESP32/STM32/Pico，单独目录）
+        │
+        └──► 07 通信与物联网 ──► 08 MAVLink/ROS 2
+                                  │
+                             09 工程开发（测试/构建/部署习惯，全程并行）</code></pre>
+<h2>硬依赖（缺了会读不懂）</h2>
+<table><thead><tr><th>主题</th><th>必须先会</th></tr></thead><tbody><tr><td>DFT 泄漏与窗</td><td>采样定理、离散内积、主瓣概念</td></tr><tr><td>IIR 稳定性</td><td>差分方程、极点（至少几何直觉）</td></tr><tr><td>小波阈值</td><td>多分辨率、正交性/双正交、噪声模型</td></tr><tr><td>EMD/VMD</td><td>瞬时频率的局限；模态混叠现象</td></tr><tr><td>Kalman</td><td>高斯、条件期望、状态空间</td></tr><tr><td>EKF</td><td>KF + 泰勒展开；线性化误差</td></tr><tr><td>UKF</td><td>KF + 无迹变换；不是“一定比 EKF 好”</td></tr><tr><td>粒子滤波</td><td>重要性采样；退化与重采样</td></tr><tr><td>IMU/GNSS 融合</td><td>坐标、姿态参数化、时间同步</td></tr><tr><td>金融分解特征</td><td>滚动因果窗口；禁止全序列 IMF</td></tr></tbody></table>
+<h2>可并行</h2>
+<ul><li>09 工程开发与任何阶段并行。</li><li>07 通信可与 02 信号实验并行（串口采集）。</li><li>04 的监督学习可与 03 并行，但深度模型和 KF 不要互相替代。</li></ul>
+<h2>不要颠倒的顺序</h2>
+<ol><li>先刷飞控再学姿态表示。</li><li>先上 CEEMDAN 再理解 FFT 分辨率。</li><li>先做深度学习时序预测再学时间切分。</li><li>用 x86-64 wheel 在树莓派上装科学栈。</li><li>把 <code>filtfilt</code> 的图当作实时滤波结果。</li></ol>
+</body></html>

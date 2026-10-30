@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>板端采集、缓冲、时间戳、实时处理与部署（未执行）</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>板端采集、缓冲、时间戳、实时处理与部署（未执行）</h1>
+<p><strong>状态：已整理。下列命令与步骤均未在本机或目标板执行。不宣称任何板卡已验证。</strong></p>
+<h2>适用范围</h2>
+<ul><li>Linux SBC：树莓派 OS、Armbian 等。镜像见 <code>embedded/linux_sbcs/_shared/images/</code>。</li><li>MCU：串口输出样本；主机侧记录。工具见 <code>embedded/host_linux_x86_64/</code>。</li></ul>
+<p>通用 DSP 算法用 Python/C 共享；<strong>系统镜像、驱动、板端 wheel 按型号与架构分开</strong>。</p>
+<h2>采集链（逻辑）</h2>
+<ol><li>传感器驱动或 MCU ADC → 样本。</li><li>时间戳：尽量硬件定时器或 <code>CLOCK_MONOTONIC</code>。记录时钟源。</li><li>环形缓冲：容量 \(N\) 样本；溢出计数 <code>drop_count</code>。</li><li>消费者：块处理（例如 256 点 FFT）不要在中断里做重活。</li><li>性能：测量块处理墙钟时间分布（p50/p99），与采样周期比较。有余量才能声称“跟得上采样率”。</li></ol>
+<h2>主机写卡（不执行，仅备查）</h2>
+<p>以树莓派 Imager 或 Etcher 为例，二进制在 <code>embedded/linux_sbcs/_shared/host_x86_64/</code>。<br>
+核对 <code>*.sha256</code> 后再写卡。本轮 <strong>未写卡</strong>。</p>
+<h2>交叉编译（不执行）</h2>
+<p>主机 x86-64 上使用 <code>aarch64-linux-gnu-gcc</code> 一类前缀。链接的库必须来自目标根文件系统，不能链主机 Ubuntu 的 <code>libm</code>。Jetson L4T 与树莓派 Bookworm <strong>不是</strong>同一用户态 ABI。</p>
+<h2>MCU 串口</h2>
+<p>8N1、波特率以板子 UART 时钟为准。示例 C 见 <a href="../../projects/P15_wavelet_c/README.html"><code>projects/P15_wavelet_c</code></a> 与 <a href="../../projects/P10_serial_logger/README.html"><code>P10_serial_logger</code></a>。OpenOCD/stlink 已下载部分，<strong>未接调试器</strong>。</p>
+<h2>实时性表述</h2>
+<ul><li>软实时：统计延迟。</li><li>硬实时：需要 RT 内核或 MCU 定时器，并给出最坏执行路径。<br></li></ul>
+<p>Python 循环 + <code>time.sleep</code> 只是教学节拍。</p>
+<h2>性能测量建议指标</h2>
+<p>处理时延、抖动、丢样率、CPU 占用、温度节流是否发生。未测就留空。</p>
+</body></html>

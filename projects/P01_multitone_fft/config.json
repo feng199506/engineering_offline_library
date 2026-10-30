@@ -1,0 +1,11 @@
+{
+  "fs": 256,
+  "durations_s": [2.0, 8.0],
+  "tones_hz": [10.0, 10.5, 40.0],
+  "amps": [1.0, 0.8, 0.15],
+  "noise_std": 0.05,
+  "seed": 1,
+  "zero_pad_to": 8192,
+  "windows": ["boxcar", "hann", "hamming", "blackman"],
+  "verification_status": "已整理，未运行验证"
+}

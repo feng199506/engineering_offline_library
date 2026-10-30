@@ -1,0 +1,8 @@
+# Exclude from public vendor tarball (NC or unclear redistribution)
+vendor/pumpkin-book-master.tar.gz
+vendor/leedl-tutorial-master.tar.gz
+vendor/ThinkDSP-master.tar.gz
+vendor/underactuated-tedrake-master.tar.gz
+vendor/cvxbook_additional_exercises-main.tar.gz
+# ThinkDSP / UDL-adjacent / Boyd extra exercises: personal-use or NC
+# Large wikis are packed separately, not excluded from disk

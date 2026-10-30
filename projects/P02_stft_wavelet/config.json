@@ -1,0 +1,12 @@
+{
+  "fs": 512,
+  "duration_s": 2.0,
+  "chirp_f0": 20,
+  "chirp_f1": 180,
+  "impulse_time_s": 1.1,
+  "impulse_amp": 4.0,
+  "noise_std": 0.05,
+  "seed": 2,
+  "stft_nperseg": [64, 256],
+  "verification_status": "已整理，未运行验证"
+}

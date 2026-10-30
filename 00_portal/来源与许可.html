@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>来源、许可、语言与下载状态</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>来源、许可、语言与下载状态</h1>
+<p>主表：<a href="../inventories/download_log.csv"><code>inventories/download_log.csv</code></a>（字段含 license、release_class、status、bytes、sha256）。<br>
+盘上文件表：<a href="../inventories/on_disk_files.csv"><code>inventories/on_disk_files.csv</code></a>（构建脚本生成）。</p>
+<h2>三类处置</h2>
+<table><thead><tr><th>release_class</th><th>含义</th><th>公开 GitHub Release</th></tr></thead><tbody><tr><td>public</td><td>OSI / CC BY / GFDL / IETF / OASIS 等允许再分发（仍须保留声明）</td><td>可以，打包前再核对包内 LICENSE</td></tr><tr><td>local</td><td>作者提供个人阅读 PDF、CC BY-NC、MIT OCW NC、厂商 datasheet</td><td><strong>不可以</strong>（<a href="../_local_only/"><code>_local_only/</code></a>、<a href="../docs_html/"><code>docs_html/</code></a>）</td></tr><tr><td>link</td><td>付费、登录、版权不明、体积策略放弃</td><td>无文件</td></tr></tbody></table>
+<h2>已离线且体积较大的原文（不完全清单）</h2>
+<p>本地个人阅读（勿上传）：MML、Boyd CVX、Axler LADR、GPML、MacKay、Think DSP/Stats/Bayes、Vetterli 两书、ISLR/ISLR2/ISLP、ESL（IA 快照）、UDL Prince、Sutton &amp; Barto、Jurafsky SLP3、FBS、MLS、Underactuated、Modern Robotics、LaValle、Pro Git、Pico/RP2040 PDF、CS229 notes、DSP Guide 34 章、LFS、Modbus 两份 PDF。</p>
+<p>可再分发候选：d2l 中英 PDF 与 d2l-zh 源码、Scipy Lectures、NumPy ref/user、Hefferon Linear Algebra、LDD3、Buildroot、MQTT/AMQP OASIS、RFC、设备树规范、Labbe Kalman、PyEMD、pywt、kissfft、filterpy、python-control、Spinning Up、CMSIS-DSP、sklearn 源、树莓派 documentation 源、PX4 user guide 源、ArduPilot wiki 源、MAVLink、pytest、FastAPI、statsmodels、PostgreSQL 文档、SQLite 文档。</p>
+<p>南瓜书、leedl-tutorial、ThinkDSP 源、Underactuated 源、Boyd 附加习题源虽在 <a href="../vendor/"><code>vendor/</code></a>，<strong>不进公开 tar</strong>（见 <a href="../scripts/release_vendor_filter.txt"><code>scripts/release_vendor_filter.txt</code></a>）。</p>
+<p><strong>更正：</strong> Datawhale 南瓜书、leedl-tutorial 为 CC BY-NC-SA，虽在 <a href="../vendor/"><code>vendor/</code></a>，公开上传按 NC 处理，打入 <code>knowledge-local-only</code> 一侧，不进 public tar 的白名单。打包脚本若包含整个 <a href="../vendor/"><code>vendor/</code></a>，发布前应剔除这两个 tar。</p>
+<h2>语言</h2>
+<p>导读与项目说明为中文。原文以英文开放教材为主，中文优先项为 d2l-zh、Datawhale 笔记。</p>
+<h2>不是已离线的情况</h2>
+<ul><li>目录里只有 URL 的书目</li><li>HTML 镜像失败或只有入口页（dspguide 第一轮）</li><li>IEEE/ASME 原论文</li><li>视频课</li><li>完整 ROS 2 / 内核文档树</li><li>行情数据、CWRU 全库</li></ul>
+</body></html>

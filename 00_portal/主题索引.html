@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>主题与资料索引</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>主题与资料索引</h1>
+<p>路径相对 <code>knowledge/</code>。下载成败以 <a href="../inventories/download_log.csv"><code>inventories/download_log.csv</code></a> 为准。</p>
+<h2>01 数学</h2>
+<table><thead><tr><th>主题</th><th>导读</th><th>原文（成功则在盘上）</th><th>项目</th></tr></thead><tbody><tr><td>线性代数</td><td><a href="../01_math/学习导读.html">学习导读</a></td><td>Hefferon（重试中）；Axler LADR <a href="../_local_only/math/"><code>_local_only/math/</code></a></td><td>P07</td></tr><tr><td>优化</td><td>同上</td><td>Boyd CVX <a href="../_local_only/math/"><code>_local_only/math/</code></a></td><td>P19</td></tr><tr><td>概率/信息</td><td>同上</td><td>MacKay、Think Stats、GPML <a href="../_local_only/math/"><code>_local_only/math/</code></a></td><td>—</td></tr><tr><td>机器学习数学</td><td>同上</td><td>MML <a href="../_local_only/math/"><code>_local_only/math/</code></a>（禁止公开 Release）</td><td>—</td></tr><tr><td>数值</td><td>同上</td><td>Scipy Lectures、NumPy ref <a href="../_public/math/"><code>_public/math/</code></a></td><td>—</td></tr></tbody></table>
+<h2>02 信号</h2>
+<table><thead><tr><th>主题</th><th>方法文</th><th>原文/代码</th><th>项目</th></tr></thead><tbody><tr><td>采样/DFT/窗</td><td><a href="../02_signal/methods/dft_窗_泄漏.html">dft_窗_泄漏</a></td><td>Think DSP；Vetterli 两书</td><td>P01</td></tr><tr><td>STFT/小波</td><td><a href="../02_signal/methods/小波.html">小波</a></td><td>pywt vendor</td><td>P02</td></tr><tr><td>FIR/IIR</td><td><a href="../02_signal/methods/fir_iir_因果.html">fir_iir_因果</a></td><td>SciPy</td><td>P03</td></tr><tr><td>EMD/VMD</td><td><a href="../02_signal/methods/emd_vmd.html">emd_vmd</a></td><td>PyEMD、vmdpy</td><td>P03</td></tr><tr><td>振动</td><td>导读工程应用节</td><td>仅合成；真机数据未下</td><td>P04</td></tr><tr><td>C FFT/小波</td><td>—</td><td>kissfft、CMSIS-DSP、P15</td><td>P15</td></tr></tbody></table>
+<p>DSP Guide 章节 PDF 第一轮失败，见重试日志。JOS 单文件 PDF 失败，改为 HTML 镜像尝试。</p>
+<h2>03 控制与估计</h2>
+<table><thead><tr><th>主题</th><th>方法文</th><th>原文/代码</th><th>项目</th></tr></thead><tbody><tr><td>KF/EKF/UKF/平滑/PF</td><td><a href="../03_control_estimation/methods/kalman_家族.html">kalman_家族</a></td><td>Labbe 书源码、filterpy</td><td>P05 P16</td></tr><tr><td>经典/现代控制</td><td>导读</td><td>python-control；FBS/Tedrake 第一轮失败</td><td>P08</td></tr><tr><td>操作与几何</td><td>—</td><td>Modern Robotics PDF 已下（local）</td><td>—</td></tr></tbody></table>
+<h2>04 数据与 AI</h2>
+<p>中文：d2l-zh PDF+源码、南瓜书、leedl-tutorial。<br>
+英文 local：ISLR、Sutton &amp; Barto、CS229 笔记。<br>
+代码：Spinning Up。<br>
+项目：P09 P20。</p>
+<h2>05–06 嵌入式与板卡</h2>
+<p>LDD3、Buildroot manual、设备树规范、树莓派文档源、Pico datasheet/SDK PDF、CMSIS-DSP。<br>
+镜像与工具链仍在上层 <code>embedded/</code>。项目：P15 P18。</p>
+<h2>07 通信</h2>
+<p>RFC 768/791/793/2616/9110、MQTT 3.1.1/5.0 OASIS、pyserial。Modbus.org 第一轮失败。项目：P10 P11。</p>
+<h2>08 机器人与无人机</h2>
+<p>Modern Robotics PDF+代码、LaValle Planning、PX4 user guide 源、ArduPilot wiki 源、MAVLink。ROS 2 发行版未镜像。项目：P12 P17。</p>
+<h2>09 工程</h2>
+<p>Pro Git（NC local）、pytest、FastAPI、SQLite 文档、PostgreSQL 16 PDF。项目：P13。</p>
+<h2>10 量化</h2>
+<p>statsmodels 源码。AFML 等商业书仅书目。项目：P06 P14。</p>
+</body></html>

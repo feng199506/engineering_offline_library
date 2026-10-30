@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>嵌入式与 Linux · 学习导读</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>嵌入式与 Linux · 学习导读</h1>
+<p><strong>状态：已整理。未在目标机验证。</strong></p>
+<h2>先修</h2>
+<p>C 的指针与内存模型、Makefile 或 CMake 入门、会用 <code>ls/mount/dmesg</code>。Python 不能替代这一领域的核心。</p>
+<h2>学习顺序</h2>
+<ol><li>用户态：进程、文件描述符、权限、动态库。</li><li>构建：gcc、链接脚本概念、交叉编译前缀 <code>aarch64-linux-gnu-</code>。</li><li>内核与驱动边界：系统调用 vs <code>/dev</code>。LDD3 是历史教材，API 已变，学结构不要抄过时接口上 6.x 内核。</li><li>设备树：硬件描述不是驱动本身。</li><li>调试：<code>gdb</code>、<code>strace</code>、<code>perf</code>、串口 console。</li><li>实时：PREEMPT_RT、优先级、最坏执行时间；Python GIL 不是硬实时方案。</li><li>性能：cache、拷贝次数、零拷贝、绑核。</li></ol>
+<h2>核心概念</h2>
+<p>交叉编译产出的二进制取决于 <strong>glibc 版本、CPU 架构、ABI</strong>。仓库里 Linux x86-64 wheel <strong>不能</strong>上 ARM 板。</p>
+<p>时钟：<code>CLOCK_MONOTONIC</code> 适合间隔；时间戳对齐传感器用同一时钟域，NTP 会跳变。</p>
+<p>环形缓冲：生产者（中断/线程）与消费者解耦。丢样要计数，不能静默覆盖还不报。</p>
+<h2>离线资料</h2>
+<ul><li>可再分发候选：LDD3 包、Buildroot manual、Devicetree spec、Yocto mega-manual（若下载成功）。</li><li>个人离线：LFS/BLFS（NC）。</li><li>未下载：Yocto 完整 sstate、内核完整 HTML、TLPI 纸书、厂商 BSP（NXP/NVIDIA 账号）。</li></ul>
+<p>已有工具链与镜像见上层 <code>embedded/</code>，<strong>未编译、未烧录</strong>。</p>
+<h2>项目</h2>
+<p><a href="../projects/P18_sbc_capture_buffer/README.html"><code>P18_sbc_capture_buffer</code></a>（主机上模拟采集逻辑）、<a href="../projects/P15_wavelet_c/README.html"><code>P15_wavelet_c</code></a>。</p>
+<h2>常见错误</h2>
+<ul><li>在板子上 <code>pip install</code> 科学包却对着 x86 wheelhouse。</li><li>用 <code>sleep</code> 当采样周期。</li><li>声称“实时 Linux”却没有测量延迟分布。</li></ul>
+</body></html>

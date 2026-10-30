@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>信号处理 · 学习导读</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>信号处理 · 学习导读</h1>
+<p><strong>状态：已整理。</strong> 这是本库最完整的一条技术线。</p>
+<h2>先修</h2>
+<p>采样之前先有连续正弦与频率；DFT 之前先有离散内积；滤波之前先有 LTI 与卷积；随机信号之前先有相关函数。线性代数与高斯见领域 01。</p>
+<h2>学习顺序</h2>
+<ol><li>采样定理、混叠、量化。</li><li>离散信号与系统、卷积、相关、频率响应。</li><li>傅里叶级数 → DTFT 直觉 → DFT/FFT。</li><li>窗函数、频谱泄漏、零填充不是真分辨率。</li><li>FIR/IIR 设计、相位与群延迟、实时因果 vs <code>filtfilt</code>。</li><li>多速率：抽取/内插、抗混叠。</li><li>STFT。</li><li>小波：多分辨率、DWT/CWT、小波包、阈值去噪。</li><li>EMD / EEMD / CEEMDAN / VMD 与 Hilbert–Huang；端点效应、模态混叠。</li><li>自适应滤波（LMS/RLS）与谱估计（周期图、Welch）。</li></ol>
+<h2>核心概念与关键公式</h2>
+<p><strong>采样</strong>：基带信号若最高频率 \(f_{\max}\)，\(f_s&gt;2f_{\max}\)。不满足则频谱周期延拓重叠，时域无法用理想低通恢复。</p>
+<p><strong>DFT</strong>：\(X[k]=\sum_{n=0}^{N-1}x[n]e^{-j2\pi kn/N}\)。频率采样间隔 \(f_s/N\)。矩形窗的 Dirichlet 核造成泄漏；窗是在泄漏与主瓣变宽之间折中。</p>
+<p><strong>STFT</strong>：短窗看时间、牺牲频率；长窗相反。不是“小波的低配”，而是常窗分析。</p>
+<p><strong>FIR 线性相位</strong>：对称系数可有广义线性相位，群延迟为常数（I 型约 \((N-1)/2\) 样本）。IIR 通常更省阶数，相位非线性，实时控制里要算群延迟。</p>
+<p><strong>零相位离线</strong>：<code>filtfilt</code> 正向再反向，非因果，<strong>不能</strong>用于实时闭环或交易执行。</p>
+<p><strong>DWT</strong>：反复用分析滤波器组；正交小波能量守恒，阈值规则（VisuShrink 等）依赖噪声模型。</p>
+<p><strong>EMD</strong>：把信号拆成本征模态；不是线性子空间分解。端点处包络外推任意，模态会混。EEMD 加噪声集成；CEEMDAN 改残差加噪；VMD 是变分约束的带通模态，参数 \(\alpha,K\) 敏感。</p>
+<p><strong>Hilbert 瞬时频率</strong>：对窄带近似成立；宽带或模态混叠时瞬时频率会乱跳，不能当物理转速计。</p>
+<h2>适用场景</h2>
+<table><thead><tr><th>方法</th><th>较合适</th><th>不合适</th></tr></thead><tbody><tr><td>FFT + 窗</td><td>稳态谐波、校准正弦</td><td>短瞬态、强非平稳</td></tr><tr><td>STFT</td><td>缓变频谱、语音</td><td>同时要很高时频分辨率</td></tr><tr><td>小波</td><td>瞬态、去噪、间断</td><td>强谐波精细分离有时不如细分 FFT</td></tr><tr><td>EMD 族</td><td>探索性非平稳</td><td>要可重复、要在线、要统计保证</td></tr><tr><td>VMD</td><td>准正交带通模态</td><td>\(K\) 未知且无验证集时乱调</td></tr><tr><td>FIR</td><td>线性相位、稳定</td><td>极窄过渡带时阶数爆炸</td></tr><tr><td>IIR</td><td>计算量受限</td><td>相位敏感、量化极限靠近单位圆</td></tr></tbody></table>
+<h2>算法说明（假设 / IO / 参数 / 复杂度 / 局限）</h2>
+<p>详见：</p>
+<ul><li><a href="methods/dft_窗_泄漏.html">methods/dft_窗_泄漏.md</a></li><li><a href="methods/fir_iir_因果.html">methods/fir_iir_因果.md</a></li><li><a href="methods/小波.html">methods/小波.md</a></li><li><a href="methods/emd_vmd.html">methods/emd_vmd.md</a></li></ul>
+<h2>离线资料</h2>
+<ul><li><strong>已规划下载</strong>：Think DSP（NC，local）、DSP Guide 章节（local）、Vetterli 书（local）、JOS 书（local）、PyWavelets / PyEMD / vmdpy / kissfft / padasip 源码（vendor）、SciPy reference。</li><li><strong>书目未下载</strong>：Oppenheim <em>Signals and Systems</em>、<em>Discrete-Time Signal Processing</em>、Mallat <em>A Wavelet Tour</em>、Proakis、Lyons <em>Understanding DSP</em>（商业书）。</li><li><strong>论文</strong>：Huang NTRS 尝试下载；VMD/CEEMDAN 原版 IEEE 未下载。</li></ul>
+<h2>代码与数据</h2>
+<ul><li>Python：<code>scipy.signal</code>、<code>pywt</code>、<code>PyEMD</code>（环境 03）。</li><li>C：<a href="../projects/P15_wavelet_c/README.html"><code>projects/P15_wavelet_c</code></a> 与 kissfft。</li><li>Octave：<code>pkg load signal</code>（本机未装 Octave 则跳过）。</li><li>数据：项目内 <strong>合成</strong>；真实振动见 P04 说明与 NASA 公开集 <strong>链接</strong>（本轮不一定已拉全文件）。</li></ul>
+<h2>实验项目</h2>
+<p>P01 多频 FFT；P02 STFT vs 小波；P03 去噪对比；P04 振动诊断。全部 <strong>未运行验证</strong>。</p>
+<h2>常见错误</h2>
+<ul><li>用零填充冒充“把 0.1 Hz 分辨出来了”。</li><li>窗选 Kaiser 却不看 β 与等效噪声带宽。</li><li>对交易价格做全序列 EMD 再当特征。</li><li>实时固件里调用 <code>filtfilt</code>。</li><li>把 IMF 数量当物理部件数量。</li></ul>
+</body></html>

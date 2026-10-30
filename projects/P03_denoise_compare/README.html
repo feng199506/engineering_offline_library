@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>P03 去噪：数字滤波、小波、EMD 系列</title>
+<style>body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;max-width:1100px;margin:2em auto;
+padding:0 1em;line-height:1.6;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:14px}th,td{border:1px solid #ccc;
+padding:4px 8px;vertical-align:top}th{background:#f3f3f3}code{background:#f5f5f5;padding:0 3px}pre{background:#f5f5f5;padding:8px;
+overflow:auto}a{color:#0645ad}.muted{color:#888}.tag{font-size:12px;background:#fde8c8;border-radius:3px;padding:0 4px;margin-left:4px}.nav{font-size:14px;margin-bottom:1em}</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script defer src="../../_offline_libs/mathjax-3.2.2/es5/tex-mml-chtml.js"></script>
+</head><body>
+<div class="nav"><a href="../../index_cn.html">← 离线首页 index_cn.html</a></div>
+<h1>P03 去噪：数字滤波、小波、EMD 系列</h1>
+<table><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td>数据</td><td><strong>示意合成</strong>：干净块状/正弦 + 高斯噪声</td></tr><tr><td>状态</td><td>已整理，未运行验证</td></tr><tr><td>因果</td><td><code>filtfilt</code> 与全序列 EMD 为 <strong>离线非因果</strong>；Butterworth <code>lfilter</code> 为因果</td></tr></tbody></table>
+<h2>目的</h2>
+<p>同一噪声实现上比较 SNR <strong>和</strong> 边缘 RMSE。禁止只报 SNR。</p>
+<h2>运行</h2>
+<pre><code>python3 make_signal.py
+python3 analyze.py</code></pre>
+<p>缺 PyEMD / pywt 时该项标记 skipped。</p>
+<h2>预期现象（逻辑）</h2>
+<ul><li>低通 FIR/IIR：平滑正弦好，块边缘变钝。</li><li><code>filtfilt</code>：边缘对称变钝，看起来“相位好”，但是非因果。</li><li>小波软阈值：块边缘通常优于强低通，噪声模型不对时会切掉细节。</li><li>EMD：可能把噪声拆进前几阶 IMF；端点处易畸变。未运行不得写“EMD 最好”。</li></ul>
+<h2>评价指标</h2>
+<p>SNR、RMSE、边缘 10 点 RMSE、是否因果。</p>
+</body></html>
